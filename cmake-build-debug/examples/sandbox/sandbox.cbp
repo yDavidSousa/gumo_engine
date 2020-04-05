@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="sandbox"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="msvc8"/>
+		<Option virtualFolders="CMake Files\;CMake Files\source\;CMake Files\examples\;CMake Files\examples\sandbox\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="D:/Projects/gumo_engine/cmake-build-debug/examples/sandbox"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\examples\sandbox\Makefile VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\examples\sandbox\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\examples\sandbox\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\examples\sandbox\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sandbox">
+				<Option output="D:/Projects/gumo_engine/cmake-build-debug/examples/sandbox/sandbox.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Projects/gumo_engine/cmake-build-debug/examples/sandbox"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="D:/Projects/gumo_engine/deps/include"/>
+					<Add directory="D:/Projects/gumo_engine/include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\examples\sandbox\Makefile VERBOSE=1 sandbox"/>
+					<CompileFile command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\examples\sandbox\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\examples\sandbox\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\examples\sandbox\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sandbox/fast">
+				<Option output="D:/Projects/gumo_engine/cmake-build-debug/examples/sandbox/sandbox.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Projects/gumo_engine/cmake-build-debug/examples/sandbox"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="D:/Projects/gumo_engine/deps/include"/>
+					<Add directory="D:/Projects/gumo_engine/include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\examples\sandbox\Makefile VERBOSE=1 sandbox/fast"/>
+					<CompileFile command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\examples\sandbox\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\examples\sandbox\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\examples\sandbox\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="D:/Projects/gumo_engine/examples/sandbox/main.c">
+			<Option target="sandbox"/>
+		</Unit>
+		<Unit filename="D:/Projects/gumo_engine/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="D:/Projects/gumo_engine/source/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\source\"/>
+		</Unit>
+		<Unit filename="D:/Projects/gumo_engine/examples/sandbox/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\examples\sandbox\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
