@@ -58,36 +58,99 @@ include CMakeFiles\gumo_engine.dir\progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles\gumo_engine.dir\flags.make
 
-CMakeFiles\gumo_engine.dir\entry_point.c.obj: CMakeFiles\gumo_engine.dir\flags.make
-CMakeFiles\gumo_engine.dir\entry_point.c.obj: ..\entry_point.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Projects\gumo_engine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/gumo_engine.dir/entry_point.c.obj"
+CMakeFiles\gumo_engine.dir\source\renderer\graphics_context.c.obj: CMakeFiles\gumo_engine.dir\flags.make
+CMakeFiles\gumo_engine.dir\source\renderer\graphics_context.c.obj: ..\source\renderer\graphics_context.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Projects\gumo_engine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/gumo_engine.dir/source/renderer/graphics_context.c.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe @<<
- /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\gumo_engine.dir\entry_point.c.obj /FdCMakeFiles\gumo_engine.dir\gumo_engine.pdb /FS -c D:\Projects\gumo_engine\entry_point.c
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\gumo_engine.dir\source\renderer\graphics_context.c.obj /FdCMakeFiles\gumo_engine.dir\gumo_engine.pdb /FS -c D:\Projects\gumo_engine\source\renderer\graphics_context.c
 <<
 
-CMakeFiles\gumo_engine.dir\entry_point.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gumo_engine.dir/entry_point.c.i"
-	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe > CMakeFiles\gumo_engine.dir\entry_point.c.i @<<
- /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\Projects\gumo_engine\entry_point.c
+CMakeFiles\gumo_engine.dir\source\renderer\graphics_context.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gumo_engine.dir/source/renderer/graphics_context.c.i"
+	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe > CMakeFiles\gumo_engine.dir\source\renderer\graphics_context.c.i @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\Projects\gumo_engine\source\renderer\graphics_context.c
 <<
 
-CMakeFiles\gumo_engine.dir\entry_point.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gumo_engine.dir/entry_point.c.s"
+CMakeFiles\gumo_engine.dir\source\renderer\graphics_context.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gumo_engine.dir/source/renderer/graphics_context.c.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe @<<
- /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\gumo_engine.dir\entry_point.c.s /c D:\Projects\gumo_engine\entry_point.c
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\gumo_engine.dir\source\renderer\graphics_context.c.s /c D:\Projects\gumo_engine\source\renderer\graphics_context.c
+<<
+
+CMakeFiles\gumo_engine.dir\source\renderer\renderer_2d.c.obj: CMakeFiles\gumo_engine.dir\flags.make
+CMakeFiles\gumo_engine.dir\source\renderer\renderer_2d.c.obj: ..\source\renderer\renderer_2d.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Projects\gumo_engine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/gumo_engine.dir/source/renderer/renderer_2d.c.obj"
+	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\gumo_engine.dir\source\renderer\renderer_2d.c.obj /FdCMakeFiles\gumo_engine.dir\gumo_engine.pdb /FS -c D:\Projects\gumo_engine\source\renderer\renderer_2d.c
+<<
+
+CMakeFiles\gumo_engine.dir\source\renderer\renderer_2d.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gumo_engine.dir/source/renderer/renderer_2d.c.i"
+	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe > CMakeFiles\gumo_engine.dir\source\renderer\renderer_2d.c.i @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\Projects\gumo_engine\source\renderer\renderer_2d.c
+<<
+
+CMakeFiles\gumo_engine.dir\source\renderer\renderer_2d.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gumo_engine.dir/source/renderer/renderer_2d.c.s"
+	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\gumo_engine.dir\source\renderer\renderer_2d.c.s /c D:\Projects\gumo_engine\source\renderer\renderer_2d.c
+<<
+
+CMakeFiles\gumo_engine.dir\source\application.c.obj: CMakeFiles\gumo_engine.dir\flags.make
+CMakeFiles\gumo_engine.dir\source\application.c.obj: ..\source\application.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Projects\gumo_engine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/gumo_engine.dir/source/application.c.obj"
+	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\gumo_engine.dir\source\application.c.obj /FdCMakeFiles\gumo_engine.dir\gumo_engine.pdb /FS -c D:\Projects\gumo_engine\source\application.c
+<<
+
+CMakeFiles\gumo_engine.dir\source\application.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gumo_engine.dir/source/application.c.i"
+	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe > CMakeFiles\gumo_engine.dir\source\application.c.i @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\Projects\gumo_engine\source\application.c
+<<
+
+CMakeFiles\gumo_engine.dir\source\application.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gumo_engine.dir/source/application.c.s"
+	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\gumo_engine.dir\source\application.c.s /c D:\Projects\gumo_engine\source\application.c
+<<
+
+CMakeFiles\gumo_engine.dir\source\window.c.obj: CMakeFiles\gumo_engine.dir\flags.make
+CMakeFiles\gumo_engine.dir\source\window.c.obj: ..\source\window.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Projects\gumo_engine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/gumo_engine.dir/source/window.c.obj"
+	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\gumo_engine.dir\source\window.c.obj /FdCMakeFiles\gumo_engine.dir\gumo_engine.pdb /FS -c D:\Projects\gumo_engine\source\window.c
+<<
+
+CMakeFiles\gumo_engine.dir\source\window.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gumo_engine.dir/source/window.c.i"
+	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe > CMakeFiles\gumo_engine.dir\source\window.c.i @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\Projects\gumo_engine\source\window.c
+<<
+
+CMakeFiles\gumo_engine.dir\source\window.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gumo_engine.dir/source/window.c.s"
+	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\gumo_engine.dir\source\window.c.s /c D:\Projects\gumo_engine\source\window.c
 <<
 
 # Object files for target gumo_engine
 gumo_engine_OBJECTS = \
-"CMakeFiles\gumo_engine.dir\entry_point.c.obj"
+"CMakeFiles\gumo_engine.dir\source\renderer\graphics_context.c.obj" \
+"CMakeFiles\gumo_engine.dir\source\renderer\renderer_2d.c.obj" \
+"CMakeFiles\gumo_engine.dir\source\application.c.obj" \
+"CMakeFiles\gumo_engine.dir\source\window.c.obj"
 
 # External object files for target gumo_engine
 gumo_engine_EXTERNAL_OBJECTS =
 
-gumo_engine.lib: CMakeFiles\gumo_engine.dir\entry_point.c.obj
+gumo_engine.lib: CMakeFiles\gumo_engine.dir\source\renderer\graphics_context.c.obj
+gumo_engine.lib: CMakeFiles\gumo_engine.dir\source\renderer\renderer_2d.c.obj
+gumo_engine.lib: CMakeFiles\gumo_engine.dir\source\application.c.obj
+gumo_engine.lib: CMakeFiles\gumo_engine.dir\source\window.c.obj
 gumo_engine.lib: CMakeFiles\gumo_engine.dir\build.make
 gumo_engine.lib: CMakeFiles\gumo_engine.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\Projects\gumo_engine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library gumo_engine.lib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\Projects\gumo_engine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C static library gumo_engine.lib"
 	$(CMAKE_COMMAND) -P CMakeFiles\gumo_engine.dir\cmake_clean_target.cmake
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\link.exe /lib /nologo /machine:X86 /out:gumo_engine.lib @CMakeFiles\gumo_engine.dir\objects1.rsp 
 

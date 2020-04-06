@@ -80,12 +80,12 @@ preinstall: examples\sandbox\preinstall
 CMakeFiles\gumo_engine.dir\all:
 	$(MAKE) -f CMakeFiles\gumo_engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\gumo_engine.dir\depend
 	$(MAKE) -f CMakeFiles\gumo_engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\gumo_engine.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\Projects\gumo_engine\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target gumo_engine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\Projects\gumo_engine\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5 "Built target gumo_engine"
 .PHONY : CMakeFiles\gumo_engine.dir\all
 
 # Build rule for subdir invocation for target.
 CMakeFiles\gumo_engine.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Projects\gumo_engine\cmake-build-debug\CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Projects\gumo_engine\cmake-build-debug\CMakeFiles 5
 	$(MAKE) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) CMakeFiles\gumo_engine.dir\all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Projects\gumo_engine\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles\gumo_engine.dir\rule
@@ -143,12 +143,12 @@ examples\sandbox\preinstall:
 examples\sandbox\CMakeFiles\sandbox.dir\all: CMakeFiles\gumo_engine.dir\all
 	$(MAKE) -f examples\sandbox\CMakeFiles\sandbox.dir\build.make /nologo -$(MAKEFLAGS) examples\sandbox\CMakeFiles\sandbox.dir\depend
 	$(MAKE) -f examples\sandbox\CMakeFiles\sandbox.dir\build.make /nologo -$(MAKEFLAGS) examples\sandbox\CMakeFiles\sandbox.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\Projects\gumo_engine\cmake-build-debug\CMakeFiles --progress-num=3,4 "Built target sandbox"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\Projects\gumo_engine\cmake-build-debug\CMakeFiles --progress-num=6,7 "Built target sandbox"
 .PHONY : examples\sandbox\CMakeFiles\sandbox.dir\all
 
 # Build rule for subdir invocation for target.
 examples\sandbox\CMakeFiles\sandbox.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Projects\gumo_engine\cmake-build-debug\CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Projects\gumo_engine\cmake-build-debug\CMakeFiles 7
 	$(MAKE) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) examples\sandbox\CMakeFiles\sandbox.dir\all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Projects\gumo_engine\cmake-build-debug\CMakeFiles 0
 .PHONY : examples\sandbox\CMakeFiles\sandbox.dir\rule

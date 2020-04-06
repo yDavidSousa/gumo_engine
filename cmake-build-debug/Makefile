@@ -137,32 +137,113 @@ sandbox\fast:
 	$(MAKE) -f examples\sandbox\CMakeFiles\sandbox.dir\build.make /nologo -$(MAKEFLAGS) examples\sandbox\CMakeFiles\sandbox.dir\build
 .PHONY : sandbox\fast
 
-entry_point.obj: entry_point.c.obj
+source\application.obj: source\application.c.obj
 
-.PHONY : entry_point.obj
+.PHONY : source\application.obj
 
 # target to build an object file
-entry_point.c.obj:
-	$(MAKE) -f CMakeFiles\gumo_engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\gumo_engine.dir\entry_point.c.obj
-.PHONY : entry_point.c.obj
+source\application.c.obj:
+	$(MAKE) -f CMakeFiles\gumo_engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\gumo_engine.dir\source\application.c.obj
+.PHONY : source\application.c.obj
 
-entry_point.i: entry_point.c.i
+source\application.i: source\application.c.i
 
-.PHONY : entry_point.i
+.PHONY : source\application.i
 
 # target to preprocess a source file
-entry_point.c.i:
-	$(MAKE) -f CMakeFiles\gumo_engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\gumo_engine.dir\entry_point.c.i
-.PHONY : entry_point.c.i
+source\application.c.i:
+	$(MAKE) -f CMakeFiles\gumo_engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\gumo_engine.dir\source\application.c.i
+.PHONY : source\application.c.i
 
-entry_point.s: entry_point.c.s
+source\application.s: source\application.c.s
 
-.PHONY : entry_point.s
+.PHONY : source\application.s
 
 # target to generate assembly for a file
-entry_point.c.s:
-	$(MAKE) -f CMakeFiles\gumo_engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\gumo_engine.dir\entry_point.c.s
-.PHONY : entry_point.c.s
+source\application.c.s:
+	$(MAKE) -f CMakeFiles\gumo_engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\gumo_engine.dir\source\application.c.s
+.PHONY : source\application.c.s
+
+source\renderer\graphics_context.obj: source\renderer\graphics_context.c.obj
+
+.PHONY : source\renderer\graphics_context.obj
+
+# target to build an object file
+source\renderer\graphics_context.c.obj:
+	$(MAKE) -f CMakeFiles\gumo_engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\gumo_engine.dir\source\renderer\graphics_context.c.obj
+.PHONY : source\renderer\graphics_context.c.obj
+
+source\renderer\graphics_context.i: source\renderer\graphics_context.c.i
+
+.PHONY : source\renderer\graphics_context.i
+
+# target to preprocess a source file
+source\renderer\graphics_context.c.i:
+	$(MAKE) -f CMakeFiles\gumo_engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\gumo_engine.dir\source\renderer\graphics_context.c.i
+.PHONY : source\renderer\graphics_context.c.i
+
+source\renderer\graphics_context.s: source\renderer\graphics_context.c.s
+
+.PHONY : source\renderer\graphics_context.s
+
+# target to generate assembly for a file
+source\renderer\graphics_context.c.s:
+	$(MAKE) -f CMakeFiles\gumo_engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\gumo_engine.dir\source\renderer\graphics_context.c.s
+.PHONY : source\renderer\graphics_context.c.s
+
+source\renderer\renderer_2d.obj: source\renderer\renderer_2d.c.obj
+
+.PHONY : source\renderer\renderer_2d.obj
+
+# target to build an object file
+source\renderer\renderer_2d.c.obj:
+	$(MAKE) -f CMakeFiles\gumo_engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\gumo_engine.dir\source\renderer\renderer_2d.c.obj
+.PHONY : source\renderer\renderer_2d.c.obj
+
+source\renderer\renderer_2d.i: source\renderer\renderer_2d.c.i
+
+.PHONY : source\renderer\renderer_2d.i
+
+# target to preprocess a source file
+source\renderer\renderer_2d.c.i:
+	$(MAKE) -f CMakeFiles\gumo_engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\gumo_engine.dir\source\renderer\renderer_2d.c.i
+.PHONY : source\renderer\renderer_2d.c.i
+
+source\renderer\renderer_2d.s: source\renderer\renderer_2d.c.s
+
+.PHONY : source\renderer\renderer_2d.s
+
+# target to generate assembly for a file
+source\renderer\renderer_2d.c.s:
+	$(MAKE) -f CMakeFiles\gumo_engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\gumo_engine.dir\source\renderer\renderer_2d.c.s
+.PHONY : source\renderer\renderer_2d.c.s
+
+source\window.obj: source\window.c.obj
+
+.PHONY : source\window.obj
+
+# target to build an object file
+source\window.c.obj:
+	$(MAKE) -f CMakeFiles\gumo_engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\gumo_engine.dir\source\window.c.obj
+.PHONY : source\window.c.obj
+
+source\window.i: source\window.c.i
+
+.PHONY : source\window.i
+
+# target to preprocess a source file
+source\window.c.i:
+	$(MAKE) -f CMakeFiles\gumo_engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\gumo_engine.dir\source\window.c.i
+.PHONY : source\window.c.i
+
+source\window.s: source\window.c.s
+
+.PHONY : source\window.s
+
+# target to generate assembly for a file
+source\window.c.s:
+	$(MAKE) -f CMakeFiles\gumo_engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\gumo_engine.dir\source\window.c.s
+.PHONY : source\window.c.s
 
 # Help Target
 help:
@@ -174,9 +255,18 @@ help:
 	@echo ... gumo_engine
 	@echo ... rebuild_cache
 	@echo ... sandbox
-	@echo ... entry_point.obj
-	@echo ... entry_point.i
-	@echo ... entry_point.s
+	@echo ... source/application.obj
+	@echo ... source/application.i
+	@echo ... source/application.s
+	@echo ... source/renderer/graphics_context.obj
+	@echo ... source/renderer/graphics_context.i
+	@echo ... source/renderer/graphics_context.s
+	@echo ... source/renderer/renderer_2d.obj
+	@echo ... source/renderer/renderer_2d.i
+	@echo ... source/renderer/renderer_2d.s
+	@echo ... source/window.obj
+	@echo ... source/window.i
+	@echo ... source/window.s
 .PHONY : help
 
 

@@ -8,6 +8,12 @@ set(CMAKE_DEPENDS_CHECK_C
   )
 set(CMAKE_C_COMPILER_ID "MSVC")
 
+# Preprocessor definitions for this target.
+set(CMAKE_TARGET_DEFINITIONS_C
+  "GM_BUILD_DLL"
+  "GM_PLATFORM_WINDOWS"
+  )
+
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
   "../deps/include"

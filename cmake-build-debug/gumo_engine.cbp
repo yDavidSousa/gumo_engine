@@ -34,6 +34,8 @@
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add option="-DGM_PLATFORM_WINDOWS"/>
+					<Add option="-DGM_BUILD_DLL"/>
 					<Add directory="D:/Projects/gumo_engine/deps/include"/>
 					<Add directory="D:/Projects/gumo_engine/deps/bin/x32"/>
 					<Add directory="D:/Projects/gumo_engine/include"/>
@@ -60,6 +62,8 @@
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add option="-DGM_PLATFORM_WINDOWS"/>
+					<Add option="-DGM_BUILD_DLL"/>
 					<Add directory="D:/Projects/gumo_engine/deps/include"/>
 					<Add directory="D:/Projects/gumo_engine/deps/bin/x32"/>
 					<Add directory="D:/Projects/gumo_engine/include"/>
@@ -96,6 +100,8 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add option="-DGM_PLATFORM_WINDOWS"/>
+					<Add option="-DGM_BUILD_DLL"/>
 					<Add directory="D:/Projects/gumo_engine/deps/include"/>
 					<Add directory="D:/Projects/gumo_engine/include"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include"/>
@@ -120,6 +126,8 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add option="-DGM_PLATFORM_WINDOWS"/>
+					<Add option="-DGM_BUILD_DLL"/>
 					<Add directory="D:/Projects/gumo_engine/deps/include"/>
 					<Add directory="D:/Projects/gumo_engine/include"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include"/>
@@ -138,11 +146,41 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="D:/Projects/gumo_engine/entry_point.c">
-			<Option target="gumo_engine"/>
-		</Unit>
 		<Unit filename="D:/Projects/gumo_engine/examples/sandbox/main.c">
 			<Option target="sandbox"/>
+		</Unit>
+		<Unit filename="D:/Projects/gumo_engine/gumo.h">
+			<Option target="gumo_engine"/>
+		</Unit>
+		<Unit filename="D:/Projects/gumo_engine/include/gumo/application.h">
+			<Option target="gumo_engine"/>
+		</Unit>
+		<Unit filename="D:/Projects/gumo_engine/include/gumo/core.h">
+			<Option target="gumo_engine"/>
+		</Unit>
+		<Unit filename="D:/Projects/gumo_engine/include/gumo/entry_point.h">
+			<Option target="gumo_engine"/>
+		</Unit>
+		<Unit filename="D:/Projects/gumo_engine/include/gumo/renderer/graphics_context.h">
+			<Option target="gumo_engine"/>
+		</Unit>
+		<Unit filename="D:/Projects/gumo_engine/include/gumo/renderer/renderer_2d.h">
+			<Option target="gumo_engine"/>
+		</Unit>
+		<Unit filename="D:/Projects/gumo_engine/include/gumo/window.h">
+			<Option target="gumo_engine"/>
+		</Unit>
+		<Unit filename="D:/Projects/gumo_engine/source/application.c">
+			<Option target="gumo_engine"/>
+		</Unit>
+		<Unit filename="D:/Projects/gumo_engine/source/renderer/graphics_context.c">
+			<Option target="gumo_engine"/>
+		</Unit>
+		<Unit filename="D:/Projects/gumo_engine/source/renderer/renderer_2d.c">
+			<Option target="gumo_engine"/>
+		</Unit>
+		<Unit filename="D:/Projects/gumo_engine/source/window.c">
+			<Option target="gumo_engine"/>
 		</Unit>
 		<Unit filename="D:/Projects/gumo_engine/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

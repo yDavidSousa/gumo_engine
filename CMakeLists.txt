@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.15)
 project(gumo_engine VERSION 1.0 DESCRIPTION "Game Engine" LANGUAGES C)
 
+add_definitions(-DGM_PLATFORM_WINDOWS)
+add_definitions(-DGM_BUILD_DLL)
+
 #--------------------------------------------------------------------
 # SET VARIABLES
 #--------------------------------------------------------------------
@@ -18,7 +21,14 @@ set(GUMO_ROOT_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
 set(GUMO_INCLUDE_DIR "${GUMO_ROOT_DIR}/include/gumo")
 set(GUMO_SOURCE_DIR "${GUMO_ROOT_DIR}/source")
 
-set(GUMO_SOURCE_FILES entry_point.c)
+set(GUMO_SOURCE_FILES
+        include/gumo/application.h
+        include/gumo/core.h
+        include/gumo/entry_point.h
+        include/gumo/window.h
+        include/gumo/renderer/graphics_context.h
+        include/gumo/renderer/renderer_2d.h
+        gumo.h)
 
 add_subdirectory(${GUMO_SOURCE_DIR})
 add_library(gumo_engine ${GUMO_SOURCE_FILES})
