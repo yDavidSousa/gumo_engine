@@ -6,6 +6,7 @@ examples\sandbox\CMakeFiles\sandbox.dir\main.c.obj: ..\gumo.h
 examples\sandbox\CMakeFiles\sandbox.dir\main.c.obj: ..\include\gumo\application.h
 examples\sandbox\CMakeFiles\sandbox.dir\main.c.obj: ..\include\gumo\core.h
 examples\sandbox\CMakeFiles\sandbox.dir\main.c.obj: ..\include\gumo\entry_point.h
+examples\sandbox\CMakeFiles\sandbox.dir\main.c.obj: ..\include\gumo\logger.h
 examples\sandbox\CMakeFiles\sandbox.dir\main.c.obj: ..\include\gumo\renderer\graphics_context.h
 examples\sandbox\CMakeFiles\sandbox.dir\main.c.obj: ..\include\gumo\window.h
 examples\sandbox\CMakeFiles\sandbox.dir\main.c.obj: ..\examples\sandbox\main.c

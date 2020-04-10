@@ -4,7 +4,7 @@
 # compile C with C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.16.27023/bin/Hostx86/x86/cl.exe
 C_FLAGS = /DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd  
 
-C_DEFINES = -DGM_BUILD_DLL -DGM_PLATFORM_WINDOWS
+C_DEFINES = -DGM_BUILD_DLL -DGM_DEBUG -DGM_PLATFORM_WINDOWS
 
 C_INCLUDES = -ID:\Projects\gumo_engine\deps\include -ID:\Projects\gumo_engine\deps\bin\x32 -ID:\Projects\gumo_engine\include -ID:\Projects\gumo_engine\source 
 

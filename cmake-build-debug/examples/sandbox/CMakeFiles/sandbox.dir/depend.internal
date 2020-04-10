@@ -7,6 +7,7 @@ examples/sandbox/CMakeFiles/sandbox.dir/main.c.obj
  ../include/gumo/application.h
  ../include/gumo/core.h
  ../include/gumo/entry_point.h
+ ../include/gumo/logger.h
  ../include/gumo/renderer/graphics_context.h
  ../include/gumo/window.h
  D:/Projects/gumo_engine/examples/sandbox/main.c

@@ -65,8 +65,20 @@ window.h
 ../include/gumo/window.h
 
 ../include/gumo/core.h
+stdlib.h
+-
+gumo/logger.h
+-
 
 ../include/gumo/entry_point.h
+
+../include/gumo/logger.h
+stdarg.h
+-
+stdio.h
+-
+string.h
+-
 
 ../include/gumo/renderer/graphics_context.h
 gumo/core.h
@@ -81,8 +93,6 @@ gumo/renderer/graphics_context.h
 -
 
 D:/Projects/gumo_engine/examples/sandbox/main.c
-stdio.h
--
 ../../gumo.h
 -
 

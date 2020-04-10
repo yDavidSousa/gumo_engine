@@ -8,6 +8,9 @@ typedef struct application{
     window_t* window;
     int target_frame_rate;
     bool running;
+    unsigned int vertex_array;
+    unsigned int vertex_buffer;
+    unsigned int index_buffer;
 } application_t;
 
 extern void on_update(float delta_time);

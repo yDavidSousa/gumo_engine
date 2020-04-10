@@ -8,4 +8,4 @@ typedef struct graphics_context{
 } graphics_context_t;
 
 GUMO_API graphics_context_t* create_context(GLFWwindow* window);
-GUMO_API void swap_buffers();
+GUMO_API void swap_buffers(graphics_context_t* context);

@@ -134,12 +134,32 @@ CMakeFiles\gumo_engine.dir\source\window.c.s: cmake_force
  /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\gumo_engine.dir\source\window.c.s /c D:\Projects\gumo_engine\source\window.c
 <<
 
+CMakeFiles\gumo_engine.dir\source\logger.c.obj: CMakeFiles\gumo_engine.dir\flags.make
+CMakeFiles\gumo_engine.dir\source\logger.c.obj: ..\source\logger.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Projects\gumo_engine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/gumo_engine.dir/source/logger.c.obj"
+	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\gumo_engine.dir\source\logger.c.obj /FdCMakeFiles\gumo_engine.dir\gumo_engine.pdb /FS -c D:\Projects\gumo_engine\source\logger.c
+<<
+
+CMakeFiles\gumo_engine.dir\source\logger.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gumo_engine.dir/source/logger.c.i"
+	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe > CMakeFiles\gumo_engine.dir\source\logger.c.i @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\Projects\gumo_engine\source\logger.c
+<<
+
+CMakeFiles\gumo_engine.dir\source\logger.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gumo_engine.dir/source/logger.c.s"
+	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\cl.exe @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\gumo_engine.dir\source\logger.c.s /c D:\Projects\gumo_engine\source\logger.c
+<<
+
 # Object files for target gumo_engine
 gumo_engine_OBJECTS = \
 "CMakeFiles\gumo_engine.dir\source\renderer\graphics_context.c.obj" \
 "CMakeFiles\gumo_engine.dir\source\renderer\renderer_2d.c.obj" \
 "CMakeFiles\gumo_engine.dir\source\application.c.obj" \
-"CMakeFiles\gumo_engine.dir\source\window.c.obj"
+"CMakeFiles\gumo_engine.dir\source\window.c.obj" \
+"CMakeFiles\gumo_engine.dir\source\logger.c.obj"
 
 # External object files for target gumo_engine
 gumo_engine_EXTERNAL_OBJECTS =
@@ -148,9 +168,10 @@ gumo_engine.lib: CMakeFiles\gumo_engine.dir\source\renderer\graphics_context.c.o
 gumo_engine.lib: CMakeFiles\gumo_engine.dir\source\renderer\renderer_2d.c.obj
 gumo_engine.lib: CMakeFiles\gumo_engine.dir\source\application.c.obj
 gumo_engine.lib: CMakeFiles\gumo_engine.dir\source\window.c.obj
+gumo_engine.lib: CMakeFiles\gumo_engine.dir\source\logger.c.obj
 gumo_engine.lib: CMakeFiles\gumo_engine.dir\build.make
 gumo_engine.lib: CMakeFiles\gumo_engine.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\Projects\gumo_engine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C static library gumo_engine.lib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\Projects\gumo_engine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C static library gumo_engine.lib"
 	$(CMAKE_COMMAND) -P CMakeFiles\gumo_engine.dir\cmake_clean_target.cmake
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\link.exe /lib /nologo /machine:X86 /out:gumo_engine.lib @CMakeFiles\gumo_engine.dir\objects1.rsp 
 

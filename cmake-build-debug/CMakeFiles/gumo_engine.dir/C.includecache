@@ -6,6 +6,22 @@
 
 #IncludeRegexTransform: 
 
+../deps/include/gl/glew.h
+stddef.h
+-
+inttypes.h
+-
+stdint.h
+-
+inttypes.h
+-
+Availability.h
+-
+OpenGL/glu.h
+-
+GL/glu.h
+-
+
 ../deps/include/glfw/glfw3.h
 stddef.h
 -
@@ -55,6 +71,18 @@ window.h
 ../include/gumo/window.h
 
 ../include/gumo/core.h
+stdlib.h
+-
+gumo/logger.h
+-
+
+../include/gumo/logger.h
+stdarg.h
+-
+stdio.h
+-
+string.h
+-
 
 ../include/gumo/renderer/graphics_context.h
 gumo/core.h
@@ -69,11 +97,19 @@ gumo/renderer/graphics_context.h
 -
 
 D:/Projects/gumo_engine/source/application.c
+gl/glew.h
+-
 glfw/glfw3.h
 -
 gumo/application.h
 -
 gumo/window.h
+-
+
+D:/Projects/gumo_engine/source/logger.c
+gumo/logger.h
+-
+time.h
 -
 
 D:/Projects/gumo_engine/source/renderer/graphics_context.c
@@ -92,5 +128,7 @@ stdlib.h
 glfw/glfw3.h
 -
 gumo/window.h
+-
+gumo/core.h
 -
 

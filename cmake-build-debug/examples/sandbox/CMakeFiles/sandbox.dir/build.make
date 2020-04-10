@@ -97,7 +97,7 @@ examples\sandbox\sandbox.exe: examples\sandbox\CMakeFiles\sandbox.dir\objects1.r
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\Projects\gumo_engine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable sandbox.exe"
 	cd D:\Projects\gumo_engine\cmake-build-debug\examples\sandbox
 	"C:\Program Files\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\sandbox.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100162~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100162~1.0\x86\mt.exe --manifests  -- C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1416~1.270\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\sandbox.dir\objects1.rsp @<<
- /out:sandbox.exe /implib:sandbox.lib /pdb:D:\Projects\gumo_engine\cmake-build-debug\examples\sandbox\sandbox.pdb /version:0.0  /machine:X86 /debug /INCREMENTAL /subsystem:console  -LIBPATH:D:\Projects\gumo_engine\deps\lib\x32 ..\..\gumo_engine.lib opengl32.lib glfw3dll.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
+ /out:sandbox.exe /implib:sandbox.lib /pdb:D:\Projects\gumo_engine\cmake-build-debug\examples\sandbox\sandbox.pdb /version:0.0  /machine:X86 /debug /INCREMENTAL /subsystem:console  -LIBPATH:D:\Projects\gumo_engine\deps\lib\x32 ..\..\gumo_engine.lib opengl32.lib glfw3dll.lib glew32.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<
 	cd D:\Projects\gumo_engine\cmake-build-debug
 

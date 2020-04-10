@@ -164,6 +164,33 @@ source\application.c.s:
 	$(MAKE) -f CMakeFiles\gumo_engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\gumo_engine.dir\source\application.c.s
 .PHONY : source\application.c.s
 
+source\logger.obj: source\logger.c.obj
+
+.PHONY : source\logger.obj
+
+# target to build an object file
+source\logger.c.obj:
+	$(MAKE) -f CMakeFiles\gumo_engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\gumo_engine.dir\source\logger.c.obj
+.PHONY : source\logger.c.obj
+
+source\logger.i: source\logger.c.i
+
+.PHONY : source\logger.i
+
+# target to preprocess a source file
+source\logger.c.i:
+	$(MAKE) -f CMakeFiles\gumo_engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\gumo_engine.dir\source\logger.c.i
+.PHONY : source\logger.c.i
+
+source\logger.s: source\logger.c.s
+
+.PHONY : source\logger.s
+
+# target to generate assembly for a file
+source\logger.c.s:
+	$(MAKE) -f CMakeFiles\gumo_engine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\gumo_engine.dir\source\logger.c.s
+.PHONY : source\logger.c.s
+
 source\renderer\graphics_context.obj: source\renderer\graphics_context.c.obj
 
 .PHONY : source\renderer\graphics_context.obj
@@ -258,6 +285,9 @@ help:
 	@echo ... source/application.obj
 	@echo ... source/application.i
 	@echo ... source/application.s
+	@echo ... source/logger.obj
+	@echo ... source/logger.i
+	@echo ... source/logger.s
 	@echo ... source/renderer/graphics_context.obj
 	@echo ... source/renderer/graphics_context.i
 	@echo ... source/renderer/graphics_context.s

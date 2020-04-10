@@ -11,6 +11,7 @@ set(CMAKE_C_COMPILER_ID "MSVC")
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_C
   "GM_BUILD_DLL"
+  "GM_DEBUG"
   "GM_PLATFORM_WINDOWS"
   )
 

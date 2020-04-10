@@ -4,6 +4,8 @@ project(gumo_engine VERSION 1.0 DESCRIPTION "Game Engine" LANGUAGES C)
 add_definitions(-DGM_PLATFORM_WINDOWS)
 add_definitions(-DGM_BUILD_DLL)
 
+add_definitions(-DGM_DEBUG)
+
 #--------------------------------------------------------------------
 # SET VARIABLES
 #--------------------------------------------------------------------
@@ -22,12 +24,13 @@ set(GUMO_INCLUDE_DIR "${GUMO_ROOT_DIR}/include/gumo")
 set(GUMO_SOURCE_DIR "${GUMO_ROOT_DIR}/source")
 
 set(GUMO_SOURCE_FILES
-        include/gumo/application.h
-        include/gumo/core.h
-        include/gumo/entry_point.h
-        include/gumo/window.h
-        include/gumo/renderer/graphics_context.h
-        include/gumo/renderer/renderer_2d.h
+        ${GUMO_INCLUDE_DIR}/application.h
+        ${GUMO_INCLUDE_DIR}/core.h
+        ${GUMO_INCLUDE_DIR}/entry_point.h
+        ${GUMO_INCLUDE_DIR}/window.h
+        ${GUMO_INCLUDE_DIR}/renderer/graphics_context.h
+        ${GUMO_INCLUDE_DIR}/renderer/renderer_2d.h
+        ${GUMO_INCLUDE_DIR}/logger.h
         gumo.h)
 
 add_subdirectory(${GUMO_SOURCE_DIR})
@@ -39,6 +42,6 @@ target_include_directories(gumo_engine PUBLIC $<BUILD_INTERFACE:${GUMO_ROOT_DIR}
 target_include_directories(gumo_engine PRIVATE $<BUILD_INTERFACE:${GUMO_SOURCE_DIR}>)
 
 target_link_directories(gumo_engine PUBLIC ${DEPS_LIBRARIES_DIR})
-target_link_libraries(gumo_engine opengl32 glfw3dll)
+target_link_libraries(gumo_engine opengl32 glfw3dll glew32)
 
 add_subdirectory(examples/sandbox)

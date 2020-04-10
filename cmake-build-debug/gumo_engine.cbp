@@ -36,6 +36,7 @@
 				<Compiler>
 					<Add option="-DGM_PLATFORM_WINDOWS"/>
 					<Add option="-DGM_BUILD_DLL"/>
+					<Add option="-DGM_DEBUG"/>
 					<Add directory="D:/Projects/gumo_engine/deps/include"/>
 					<Add directory="D:/Projects/gumo_engine/deps/bin/x32"/>
 					<Add directory="D:/Projects/gumo_engine/include"/>
@@ -64,6 +65,7 @@
 				<Compiler>
 					<Add option="-DGM_PLATFORM_WINDOWS"/>
 					<Add option="-DGM_BUILD_DLL"/>
+					<Add option="-DGM_DEBUG"/>
 					<Add directory="D:/Projects/gumo_engine/deps/include"/>
 					<Add directory="D:/Projects/gumo_engine/deps/bin/x32"/>
 					<Add directory="D:/Projects/gumo_engine/include"/>
@@ -102,6 +104,7 @@
 				<Compiler>
 					<Add option="-DGM_PLATFORM_WINDOWS"/>
 					<Add option="-DGM_BUILD_DLL"/>
+					<Add option="-DGM_DEBUG"/>
 					<Add directory="D:/Projects/gumo_engine/deps/include"/>
 					<Add directory="D:/Projects/gumo_engine/include"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include"/>
@@ -128,6 +131,7 @@
 				<Compiler>
 					<Add option="-DGM_PLATFORM_WINDOWS"/>
 					<Add option="-DGM_BUILD_DLL"/>
+					<Add option="-DGM_DEBUG"/>
 					<Add directory="D:/Projects/gumo_engine/deps/include"/>
 					<Add directory="D:/Projects/gumo_engine/include"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include"/>
@@ -161,6 +165,9 @@
 		<Unit filename="D:/Projects/gumo_engine/include/gumo/entry_point.h">
 			<Option target="gumo_engine"/>
 		</Unit>
+		<Unit filename="D:/Projects/gumo_engine/include/gumo/logger.h">
+			<Option target="gumo_engine"/>
+		</Unit>
 		<Unit filename="D:/Projects/gumo_engine/include/gumo/renderer/graphics_context.h">
 			<Option target="gumo_engine"/>
 		</Unit>
@@ -171,6 +178,9 @@
 			<Option target="gumo_engine"/>
 		</Unit>
 		<Unit filename="D:/Projects/gumo_engine/source/application.c">
+			<Option target="gumo_engine"/>
+		</Unit>
+		<Unit filename="D:/Projects/gumo_engine/source/logger.c">
 			<Option target="gumo_engine"/>
 		</Unit>
 		<Unit filename="D:/Projects/gumo_engine/source/renderer/graphics_context.c">
