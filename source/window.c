@@ -1,8 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <glfw/glfw3.h>
 #include <gumo/window.h>
 #include <gumo/core.h>
+#include <stdio.h>
 
 static bool GLFWInitialized = false;
 

@@ -11,24 +11,24 @@
 				<Option working_dir="D:/Projects/gumo_engine/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\Makefile VERBOSE=1 all"/>
-					<CompileFile command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Projects/gumo_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Projects/gumo_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Projects/gumo_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Projects/gumo_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
 				<Option working_dir="D:/Projects/gumo_engine/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
-					<CompileFile command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Projects/gumo_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Projects/gumo_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Projects/gumo_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Projects/gumo_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gumo_engine">
-				<Option output="D:/Projects/gumo_engine/cmake-build-debug/gumo_engine.lib" prefix_auto="0" extension_auto="0"/>
+				<Option output="D:/Projects/gumo_engine/cmake-build-debug/libgumo_engine.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="D:/Projects/gumo_engine/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
@@ -41,23 +41,19 @@
 					<Add directory="D:/Projects/gumo_engine/deps/bin/x32"/>
 					<Add directory="D:/Projects/gumo_engine/include"/>
 					<Add directory="D:/Projects/gumo_engine/source"/>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\ucrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\shared"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\um"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\winrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\cppwinrt"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\Makefile VERBOSE=1 gumo_engine"/>
-					<CompileFile command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Projects/gumo_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 gumo_engine"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Projects/gumo_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Projects/gumo_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Projects/gumo_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gumo_engine/fast">
-				<Option output="D:/Projects/gumo_engine/cmake-build-debug/gumo_engine.lib" prefix_auto="0" extension_auto="0"/>
+				<Option output="D:/Projects/gumo_engine/cmake-build-debug/libgumo_engine.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="D:/Projects/gumo_engine/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
@@ -70,29 +66,25 @@
 					<Add directory="D:/Projects/gumo_engine/deps/bin/x32"/>
 					<Add directory="D:/Projects/gumo_engine/include"/>
 					<Add directory="D:/Projects/gumo_engine/source"/>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\ucrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\shared"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\um"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\winrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\cppwinrt"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\Makefile VERBOSE=1 gumo_engine/fast"/>
-					<CompileFile command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Projects/gumo_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 gumo_engine/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Projects/gumo_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Projects/gumo_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Projects/gumo_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
 				<Option working_dir="D:/Projects/gumo_engine/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Projects/gumo_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Projects/gumo_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Projects/gumo_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Projects/gumo_engine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="sandbox">
@@ -107,19 +99,15 @@
 					<Add option="-DGM_DEBUG"/>
 					<Add directory="D:/Projects/gumo_engine/deps/include"/>
 					<Add directory="D:/Projects/gumo_engine/include"/>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\ucrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\shared"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\um"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\winrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\cppwinrt"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\examples\sandbox\Makefile VERBOSE=1 sandbox"/>
-					<CompileFile command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\examples\sandbox\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\examples\sandbox\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\examples\sandbox\Makefile VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Projects/gumo_engine/cmake-build-debug/examples/sandbox/Makefile&quot;  VERBOSE=1 sandbox"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Projects/gumo_engine/cmake-build-debug/examples/sandbox/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Projects/gumo_engine/cmake-build-debug/examples/sandbox/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Projects/gumo_engine/cmake-build-debug/examples/sandbox/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="sandbox/fast">
@@ -134,19 +122,15 @@
 					<Add option="-DGM_DEBUG"/>
 					<Add directory="D:/Projects/gumo_engine/deps/include"/>
 					<Add directory="D:/Projects/gumo_engine/include"/>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\ucrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\shared"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\um"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\winrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\cppwinrt"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\examples\sandbox\Makefile VERBOSE=1 sandbox/fast"/>
-					<CompileFile command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\examples\sandbox\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\examples\sandbox\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f D:\Projects\gumo_engine\cmake-build-debug\examples\sandbox\Makefile VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Projects/gumo_engine/cmake-build-debug/examples/sandbox/Makefile&quot;  VERBOSE=1 sandbox/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Projects/gumo_engine/cmake-build-debug/examples/sandbox/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Projects/gumo_engine/cmake-build-debug/examples/sandbox/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Projects/gumo_engine/cmake-build-debug/examples/sandbox/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
@@ -168,10 +152,25 @@
 		<Unit filename="D:/Projects/gumo_engine/include/gumo/logger.h">
 			<Option target="gumo_engine"/>
 		</Unit>
+		<Unit filename="D:/Projects/gumo_engine/include/gumo/renderer/buffer.h">
+			<Option target="gumo_engine"/>
+		</Unit>
 		<Unit filename="D:/Projects/gumo_engine/include/gumo/renderer/graphics_context.h">
 			<Option target="gumo_engine"/>
 		</Unit>
+		<Unit filename="D:/Projects/gumo_engine/include/gumo/renderer/ortographics.h">
+			<Option target="gumo_engine"/>
+		</Unit>
 		<Unit filename="D:/Projects/gumo_engine/include/gumo/renderer/renderer_2d.h">
+			<Option target="gumo_engine"/>
+		</Unit>
+		<Unit filename="D:/Projects/gumo_engine/include/gumo/renderer/shader.h">
+			<Option target="gumo_engine"/>
+		</Unit>
+		<Unit filename="D:/Projects/gumo_engine/include/gumo/renderer/texture.h">
+			<Option target="gumo_engine"/>
+		</Unit>
+		<Unit filename="D:/Projects/gumo_engine/include/gumo/renderer/vertex_array.h">
 			<Option target="gumo_engine"/>
 		</Unit>
 		<Unit filename="D:/Projects/gumo_engine/include/gumo/window.h">
@@ -183,10 +182,25 @@
 		<Unit filename="D:/Projects/gumo_engine/source/logger.c">
 			<Option target="gumo_engine"/>
 		</Unit>
+		<Unit filename="D:/Projects/gumo_engine/source/renderer/buffer.c">
+			<Option target="gumo_engine"/>
+		</Unit>
 		<Unit filename="D:/Projects/gumo_engine/source/renderer/graphics_context.c">
 			<Option target="gumo_engine"/>
 		</Unit>
+		<Unit filename="D:/Projects/gumo_engine/source/renderer/orthographic_camera.c">
+			<Option target="gumo_engine"/>
+		</Unit>
 		<Unit filename="D:/Projects/gumo_engine/source/renderer/renderer_2d.c">
+			<Option target="gumo_engine"/>
+		</Unit>
+		<Unit filename="D:/Projects/gumo_engine/source/renderer/shader.c">
+			<Option target="gumo_engine"/>
+		</Unit>
+		<Unit filename="D:/Projects/gumo_engine/source/renderer/texture.c">
+			<Option target="gumo_engine"/>
+		</Unit>
+		<Unit filename="D:/Projects/gumo_engine/source/renderer/vertex_array.c">
 			<Option target="gumo_engine"/>
 		</Unit>
 		<Unit filename="D:/Projects/gumo_engine/source/window.c">

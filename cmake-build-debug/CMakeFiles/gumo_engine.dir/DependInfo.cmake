@@ -6,11 +6,16 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "D:/Projects/gumo_engine/source/application.c" "D:/Projects/gumo_engine/cmake-build-debug/CMakeFiles/gumo_engine.dir/source/application.c.obj"
   "D:/Projects/gumo_engine/source/logger.c" "D:/Projects/gumo_engine/cmake-build-debug/CMakeFiles/gumo_engine.dir/source/logger.c.obj"
+  "D:/Projects/gumo_engine/source/renderer/buffer.c" "D:/Projects/gumo_engine/cmake-build-debug/CMakeFiles/gumo_engine.dir/source/renderer/buffer.c.obj"
   "D:/Projects/gumo_engine/source/renderer/graphics_context.c" "D:/Projects/gumo_engine/cmake-build-debug/CMakeFiles/gumo_engine.dir/source/renderer/graphics_context.c.obj"
+  "D:/Projects/gumo_engine/source/renderer/orthographic_camera.c" "D:/Projects/gumo_engine/cmake-build-debug/CMakeFiles/gumo_engine.dir/source/renderer/orthographic_camera.c.obj"
   "D:/Projects/gumo_engine/source/renderer/renderer_2d.c" "D:/Projects/gumo_engine/cmake-build-debug/CMakeFiles/gumo_engine.dir/source/renderer/renderer_2d.c.obj"
+  "D:/Projects/gumo_engine/source/renderer/shader.c" "D:/Projects/gumo_engine/cmake-build-debug/CMakeFiles/gumo_engine.dir/source/renderer/shader.c.obj"
+  "D:/Projects/gumo_engine/source/renderer/texture.c" "D:/Projects/gumo_engine/cmake-build-debug/CMakeFiles/gumo_engine.dir/source/renderer/texture.c.obj"
+  "D:/Projects/gumo_engine/source/renderer/vertex_array.c" "D:/Projects/gumo_engine/cmake-build-debug/CMakeFiles/gumo_engine.dir/source/renderer/vertex_array.c.obj"
   "D:/Projects/gumo_engine/source/window.c" "D:/Projects/gumo_engine/cmake-build-debug/CMakeFiles/gumo_engine.dir/source/window.c.obj"
   )
-set(CMAKE_C_COMPILER_ID "MSVC")
+set(CMAKE_C_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_C

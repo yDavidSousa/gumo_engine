@@ -6,6 +6,22 @@
 
 #IncludeRegexTransform: 
 
+../deps/include/gl/glew.h
+stddef.h
+-
+inttypes.h
+-
+stdint.h
+-
+inttypes.h
+-
+Availability.h
+-
+OpenGL/glu.h
+-
+GL/glu.h
+-
+
 ../deps/include/glfw/glfw3.h
 stddef.h
 -
@@ -46,6 +62,16 @@ GL/glext.h
 GL/glu.h
 -
 
+../deps/include/mathc.h
+stdbool.h
+-
+math.h
+-
+stdint.h
+-
+float.h
+-
+
 ../gumo.h
 stdlib.h
 -
@@ -57,17 +83,21 @@ gumo/entry_point.h
 ../gumo/entry_point.h
 
 ../include/gumo/application.h
-glfw/glfw3.h
--
 gumo/core.h
 -
-window.h
-../include/gumo/window.h
+gumo/renderer/texture.h
+-
+gumo/renderer/shader.h
+-
+gumo/renderer/vertex_array.h
+-
+gumo/window.h
+-
 
 ../include/gumo/core.h
-stdlib.h
--
 gumo/logger.h
+-
+stdlib.h
 -
 
 ../include/gumo/entry_point.h
@@ -80,19 +110,41 @@ stdio.h
 string.h
 -
 
+../include/gumo/renderer/buffer.h
+gumo/core.h
+-
+
 ../include/gumo/renderer/graphics_context.h
 gumo/core.h
+-
+gl/glew.h
 -
 glfw/glfw3.h
 -
 
-../include/gumo/window.h
+../include/gumo/renderer/shader.h
 gumo/core.h
 -
+mathc.h
+-
+
+../include/gumo/renderer/texture.h
+gumo/core.h
+-
+
+../include/gumo/renderer/vertex_array.h
+gumo/renderer/buffer.h
+-
+
+../include/gumo/window.h
 gumo/renderer/graphics_context.h
 -
 
 D:/Projects/gumo_engine/examples/sandbox/main.c
 ../../gumo.h
+-
+math.h
+-
+string.h
 -
 

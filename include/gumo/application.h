@@ -1,16 +1,17 @@
 #pragma once
 
-#include <glfw/glfw3.h>
 #include <gumo/core.h>
-#include "window.h"
+#include <gumo/renderer/texture.h>
+#include <gumo/renderer/shader.h>
+#include <gumo/renderer/vertex_array.h>
+#include <gumo/window.h>
 
 typedef struct application{
     window_t* window;
     int target_frame_rate;
     bool running;
-    unsigned int vertex_array;
-    unsigned int vertex_buffer;
-    unsigned int index_buffer;
+    bool minimized;
+    int shading_mode;
 } application_t;
 
 extern void on_update(float delta_time);

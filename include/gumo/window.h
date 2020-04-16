@@ -1,6 +1,5 @@
 #pragma once
 
-#include <gumo/core.h>
 #include <gumo/renderer/graphics_context.h>
 
 typedef struct window_data{

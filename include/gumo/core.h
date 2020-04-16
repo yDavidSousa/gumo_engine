@@ -1,7 +1,7 @@
 #pragma once
 
-#include <stdlib.h>
 #include <gumo/logger.h>
+#include <stdlib.h>
 
 #define bool int
 #define true 1

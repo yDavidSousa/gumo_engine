@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/sandbox.dir/main.c.obj"
+  "libsandbox.dll.a"
   "sandbox.exe"
   "sandbox.exe.manifest"
-  "sandbox.lib"
   "sandbox.pdb"
 )
 

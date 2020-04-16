@@ -24,14 +24,19 @@ set(GUMO_INCLUDE_DIR "${GUMO_ROOT_DIR}/include/gumo")
 set(GUMO_SOURCE_DIR "${GUMO_ROOT_DIR}/source")
 
 set(GUMO_SOURCE_FILES
+        ${GUMO_INCLUDE_DIR}/renderer/graphics_context.h
+        ${GUMO_INCLUDE_DIR}/renderer/renderer_2d.h
+        ${GUMO_INCLUDE_DIR}/renderer/shader.h
+        ${GUMO_INCLUDE_DIR}/renderer/buffer.h
+        ${GUMO_INCLUDE_DIR}/renderer/vertex_array.h
+        ${GUMO_INCLUDE_DIR}/renderer/ortographics.h
+        ${GUMO_INCLUDE_DIR}/renderer/texture.h
         ${GUMO_INCLUDE_DIR}/application.h
         ${GUMO_INCLUDE_DIR}/core.h
         ${GUMO_INCLUDE_DIR}/entry_point.h
         ${GUMO_INCLUDE_DIR}/window.h
-        ${GUMO_INCLUDE_DIR}/renderer/graphics_context.h
-        ${GUMO_INCLUDE_DIR}/renderer/renderer_2d.h
         ${GUMO_INCLUDE_DIR}/logger.h
-        gumo.h)
+        gumo.h )
 
 add_subdirectory(${GUMO_SOURCE_DIR})
 add_library(gumo_engine ${GUMO_SOURCE_FILES})

@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include <gumo/renderer/graphics_context.h>
 
 graphics_context_t* create_context(GLFWwindow* window){
@@ -9,7 +8,7 @@ graphics_context_t* create_context(GLFWwindow* window){
 }
 
 void swap_buffers(graphics_context_t* context){
-    glBegin(GL_TRIANGLES);
-    glEnd();
+    //glBegin(GL_TRIANGLES);
+    //glEnd();
     glfwSwapBuffers(context->window_handle);
 }

@@ -26,13 +26,13 @@ const char* level_colors[] = {
 
 void log_format(enum log_level level, const char* _format, ...){
     time_t now;
-    struct tm calendar_time;
+    struct tm* calendar_time;
     char buf[16];
 
     time(&now);
-    localtime_s(&calendar_time, &now);
+    calendar_time = localtime(&now);
 
-    strftime(buf, sizeof(buf), TIME_FORMAT, &calendar_time);
+    strftime(buf, sizeof(buf), TIME_FORMAT, calendar_time);
 
 #ifdef LOG_USE_COLOR
     fprintf(stderr, COLORED_LOG_FORMAT, buf, level_colors[level], level_names[level]);
@@ -52,12 +52,12 @@ void log_format(enum log_level level, const char* _format, ...){
 
 void log_file_line(enum log_level level, const char *file, int line, const char* _format, ...){
     time_t now;
-    struct tm calendar_time;
+    struct tm* calendar_time;
     char buf[16];
 
     time(&now);
-    localtime_s(&calendar_time, &now);
-    strftime(buf, sizeof(buf), TIME_FORMAT, &calendar_time);
+    calendar_time = localtime(&now);
+    strftime(buf, sizeof(buf), TIME_FORMAT, calendar_time);
 
     fprintf(stderr, LOG_FORMAT, buf, level_names[level]);
 

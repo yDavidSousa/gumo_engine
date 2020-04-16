@@ -1,6 +1,7 @@
 #pragma once
 
 #include <gumo/core.h>
+#include <gl/glew.h>
 #include <glfw/glfw3.h>
 
 typedef struct graphics_context{
