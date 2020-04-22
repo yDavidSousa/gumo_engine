@@ -1310,7 +1310,7 @@ GLFWAPI void glfwGetVersion(int* major, int* minor, int* rev);
  *  ES version string, queried with `glGetString`.
  *
  *  __Do not use the version string__ to parse the GLFW library version.  The
- *  @ref glfwGetVersion function provides the version of the running library
+ *  @ref glfwGetVersion function provides the version of the is_running library
  *  binary in numerical format.
  *
  *  @return The ASCII encoded GLFW version string.
@@ -2271,7 +2271,7 @@ GLFWAPI void glfwIconifyWindow(GLFWwindow* window);
 /*! @brief Restores the specified window.
  *
  *  This function restores the specified window if it was previously iconified
- *  (minimized) or maximized.  If the window is already restored, this function
+ *  (is_minimized) or maximized.  If the window is already restored, this function
  *  does nothing.
  *
  *  If the specified window is a full screen window, the resolution chosen for

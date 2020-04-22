@@ -4,7 +4,8 @@
 #define LOG_FORMAT "[%s] %s: "
 #define TIME_FORMAT "%H:%M:%S"
 
-const char* level_names[] = {
+const char* level_names[] =
+{
     "TRACE", "DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"
 };
 
@@ -24,7 +25,8 @@ const char* level_colors[] = {
 };
 #endif
 
-void log_format(enum log_level level, const char* _format, ...){
+void log_format(log_level_t level, const char* _format, ...)
+{
     time_t now;
     struct tm* calendar_time;
     char buf[16];
@@ -41,25 +43,26 @@ void log_format(enum log_level level, const char* _format, ...){
 #endif
 
     va_list args;
-            va_start(args, _format);
+    va_start(args, _format);
     vfprintf(stderr, _format, args);
-            va_end(args);
+    va_end(args);
 
     fprintf(stderr, "\n");
 
     fflush(stderr);
 }
 
-void log_file_line(enum log_level level, const char *file, int line, const char* _format, ...){
+void log_file_line(log_level_t level, const char *file, int line, const char* _format, ...)
+{
     time_t now;
-    struct tm* calendar_time;
-    char buf[16];
+    struct tm* local_time;
+    char buffer[16];
 
     time(&now);
-    calendar_time = localtime(&now);
-    strftime(buf, sizeof(buf), TIME_FORMAT, calendar_time);
+    local_time = localtime(&now);
+    strftime(buffer, sizeof(buffer), TIME_FORMAT, local_time);
 
-    fprintf(stderr, LOG_FORMAT, buf, level_names[level]);
+    fprintf(stderr, LOG_FORMAT, buffer, level_names[level]);
 
     va_list args;
     va_start(args, _format);

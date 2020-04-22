@@ -2995,14 +2995,17 @@ mfloat_t *mat4_rotation_axis(mfloat_t *result, mfloat_t *v0, mfloat_t f)
 	result[1] = (xy * one_c + v0[2] * sqrt_l * s) / l;
 	result[2] = (xz * one_c - v0[1] * sqrt_l * s) / l;
 	result[3] = MFLOAT_C(0.0);
+
 	result[4] = (xy * one_c - v0[2] * sqrt_l * s) / l;
 	result[5] = (yy + (xx + zz) * c) / l;
 	result[6] = (yz * one_c + v0[0] * sqrt_l * s) / l;
 	result[7] = MFLOAT_C(0.0);
+
 	result[8] = (xz * one_c + v0[1] * sqrt_l * s) / l;
 	result[9] = (yz * one_c - v0[0] * sqrt_l * s) / l;
 	result[10] = (zz + (xx + yy) * c) / l;
 	result[11] = MFLOAT_C(0.0);
+
 	result[12] = MFLOAT_C(0.0);
 	result[13] = MFLOAT_C(0.0);
 	result[14] = MFLOAT_C(0.0);
@@ -3131,18 +3134,22 @@ mfloat_t *mat4_multiply(mfloat_t *result, mfloat_t *m0, mfloat_t *m1)
 	multiplied[1] = m0[1] * m1[0] + m0[5] * m1[1] + m0[9] * m1[2] + m0[13] * m1[3];
 	multiplied[2] = m0[2] * m1[0] + m0[6] * m1[1] + m0[10] * m1[2] + m0[14] * m1[3];
 	multiplied[3] = m0[3] * m1[0] + m0[7] * m1[1] + m0[11] * m1[2] + m0[15] * m1[3];
+
 	multiplied[4] = m0[0] * m1[4] + m0[4] * m1[5] + m0[8] * m1[6] + m0[12] * m1[7];
 	multiplied[5] = m0[1] * m1[4] + m0[5] * m1[5] + m0[9] * m1[6] + m0[13] * m1[7];
 	multiplied[6] = m0[2] * m1[4] + m0[6] * m1[5] + m0[10] * m1[6] + m0[14] * m1[7];
 	multiplied[7] = m0[3] * m1[4] + m0[7] * m1[5] + m0[11] * m1[6] + m0[15] * m1[7];
+
 	multiplied[8] = m0[0] * m1[8] + m0[4] * m1[9] + m0[8] * m1[10] + m0[12] * m1[11];
 	multiplied[9] = m0[1] * m1[8] + m0[5] * m1[9] + m0[9] * m1[10] + m0[13] * m1[11];
 	multiplied[10] = m0[2] * m1[8] + m0[6] * m1[9] + m0[10] * m1[10] + m0[14] * m1[11];
 	multiplied[11] = m0[3] * m1[8] + m0[7] * m1[9] + m0[11] * m1[10] + m0[15] * m1[11];
+
 	multiplied[12] = m0[0] * m1[12] + m0[4] * m1[13] + m0[8] * m1[14] + m0[12] * m1[15];
 	multiplied[13] = m0[1] * m1[12] + m0[5] * m1[13] + m0[9] * m1[14] + m0[13] * m1[15];
 	multiplied[14] = m0[2] * m1[12] + m0[6] * m1[13] + m0[10] * m1[14] + m0[14] * m1[15];
 	multiplied[15] = m0[3] * m1[12] + m0[7] * m1[13] + m0[11] * m1[14] + m0[15] * m1[15];
+
 	result[0] = multiplied[0];
 	result[1] = multiplied[1];
 	result[2] = multiplied[2];
@@ -3375,14 +3382,17 @@ mfloat_t *mat4_ortho(mfloat_t *result, mfloat_t l, mfloat_t r, mfloat_t b, mfloa
 	result[1] = MFLOAT_C(0.0);
 	result[2] = MFLOAT_C(0.0);
 	result[3] = MFLOAT_C(0.0);
+
 	result[4] = MFLOAT_C(0.0);
 	result[5] = MFLOAT_C(2.0) / (t - b);
 	result[6] = MFLOAT_C(0.0);
 	result[7] = MFLOAT_C(0.0);
+
 	result[8] = MFLOAT_C(0.0);
 	result[9] = MFLOAT_C(0.0);
 	result[10] = -MFLOAT_C(2.0) / (f - n);
 	result[11] = MFLOAT_C(0.0);
+
 	result[12] = -((r + l) / (r - l));
 	result[13] = -((t + b) / (t - b));
 	result[14] = -((f + n) / (f - n));

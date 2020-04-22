@@ -1,75 +1,16 @@
 #include <gumo/renderer/shader.h>
-#include <gumo/logger.h>
 #include <gl/glew.h>
 #include <glfw/glfw3.h>
 #include <stdio.h>
 
-#define BUFFER_LENGTH 2048
+const color_t COLOR_BLUE = {0.2f, 0.3f, 0.8f, 1.0f};
+const color_t COLOR_RED = {0.8f, 0.3f, 0.2f, 1.0f};
+const color_t COLOR_GREEN = {0.2f, 0.8f, 0.3f, 1.0f};
+const color_t COLOR_WHITE = {1.0f, 1.0f, 1.0f, 1.0f};
+const color_t COLOR_BLACK = {0.0f, 0.0f, 0.0f, 1.0f};
 
-void create_shader_from_file(shader_t* shader, const char* path){
-    FILE* file = fopen(path, "r");
-    GM_ASSERT(file != NULL, "Couldn't open shader file!");
-
-    char vertex_source[BUFFER_LENGTH];
-    memset(vertex_source, 0, BUFFER_LENGTH * sizeof(char));
-
-    char fragment_source[BUFFER_LENGTH];
-    memset(fragment_source, 0, BUFFER_LENGTH * sizeof(char));
-
-    char buffer[BUFFER_LENGTH];
-    while(!feof(file)){
-        fscanf(file, "%s", buffer);
-
-        if(strcmp(buffer, "#type") == 0){
-            fscanf(file, "%s", buffer);
-            if(strcmp(buffer, "vertex") == 0){
-                fseek(file, 0, SEEK_CUR);
-                int file_start = ftell(file);
-                int file_end = file_start;
-
-                while(!feof(file)){
-                    fscanf(file, "%s", buffer);
-                    int current = ftell(file);
-                    if(strcmp(buffer, "#type") == 0){
-                        file_end = file_end - 11;
-                        break;
-                    } else {
-                        file_end = current;
-                    }
-                }
-
-                fseek(file, file_start, SEEK_SET);
-                fread(vertex_source, sizeof(char), (file_end - file_start) + 1, file);
-            }
-
-            if(strcmp(buffer, "fragment") == 0){
-                fseek(file, 0, SEEK_CUR);
-                int file_start = ftell(file);
-                int file_end = file_start;
-
-                while(!feof(file)){
-                    fscanf(file, "%s", buffer);
-                    int current = ftell(file);
-                    if(strcmp(buffer, "#type") == 0){
-                        file_end = file_end - 11;
-                        break;
-                    } else {
-                        file_end = current;
-                    }
-                }
-
-                fseek(file, file_start, SEEK_SET);
-                fread(fragment_source, sizeof(char), (file_end - file_start) + 1, file);
-            }
-        }
-    }
-
-    create_shader(vertex_source, fragment_source, shader);
-
-    fclose(file);
-}
-
-void create_shader(const char* vertex_source, const char* fragment_source, shader_t* shader){
+void compile_shader(const char* vertex_source, const char* fragment_source, shader_t* shader)
+{
     // Create an empty vertex shader handle
     unsigned int vertex_shader = glCreateShader(GL_VERTEX_SHADER);
 
@@ -83,9 +24,6 @@ void create_shader(const char* vertex_source, const char* fragment_source, shade
     glGetShaderiv(vertex_shader, GL_COMPILE_STATUS, &success);
     if(success == false)
     {
-        //int max_length = 512;
-        //glGetShaderiv(vertex, GL_INFO_LOG_LENGTH, &max_length);
-
         // The maxLength includes the NULL character
         char info_log[512];
         glGetShaderInfoLog(vertex_shader, 512, NULL, info_log);
@@ -173,45 +111,60 @@ void create_shader(const char* vertex_source, const char* fragment_source, shade
     //shader->fragment = fragment_shader;
 }
 
-inline void delete_shader(shader_t* shader){
+inline void delete_shader(shader_t* shader)
+{
     glDeleteProgram(shader->id);
 }
 
-inline void bind_shader(shader_t* shader){
+inline void bind_shader(shader_t* shader)
+{
     glUseProgram(shader->id);
 }
 
-void shader_set_int(shader_t* shader, const char* name, int value){
+void shader_set_int(shader_t* shader, const char* name, int value)
+{
     int location = glGetUniformLocation(shader->id, name);
     glUniform1i(location, value);
 }
 
-void shader_set_int_array(shader_t* shader, const char* name, int* values, unsigned int length){
+void shader_set_int_array(shader_t* shader, const char* name, int* values, unsigned int length)
+{
     int location = glGetUniformLocation(shader->id, name);
     glUniform1iv(location, length, values);
 }
 
-void shader_set_float(shader_t* shader, const char* name, float value){
+void shader_set_float(shader_t* shader, const char* name, float value)
+{
     int location = glGetUniformLocation(shader->id, name);
     glUniform1f(location, value);
 }
 
-void shader_set_float2(shader_t* shader, const char* name, struct vec2 value){
+void shader_set_float2(shader_t* shader, const char* name, struct vec2 value)
+{
     int location = glGetUniformLocation(shader->id, name);
     glUniform2f(location, value.x, value.y);
 }
 
-void shader_set_float3(shader_t* shader, const char* name, struct vec3 value){
+void shader_set_float3(shader_t* shader, const char* name, struct vec3 value)
+{
     int location = glGetUniformLocation(shader->id, name);
     glUniform3f(location, value.x, value.y, value.z);
 }
 
-void shader_set_float4(shader_t* shader, const char* name, struct vec4 value){
+void shader_set_float4(shader_t* shader, const char* name, struct vec4 value)
+{
     int location = glGetUniformLocation(shader->id, name);
     glUniform4f(location, value.x, value.y, value.z, value.w);
 }
 
-void shader_set_color(shader_t* shader, const char* name, color_t value){
+void shader_set_color(shader_t* shader, const char* name, color_t value)
+{
     int location = glGetUniformLocation(shader->id, name);
     glUniform4f(location, value.r, value.g, value.b, value.a);
+}
+
+void shader_set_matrix4(shader_t* shader, const char* name, const matrix4_t* matrix4)
+{
+    int location = glGetUniformLocation(shader->id, name);
+    glUniformMatrix4fv(location, 1, GL_FALSE, (float* )matrix4);
 }

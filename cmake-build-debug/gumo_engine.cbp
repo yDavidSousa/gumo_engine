@@ -137,9 +137,6 @@
 		<Unit filename="D:/Projects/gumo_engine/examples/sandbox/main.c">
 			<Option target="sandbox"/>
 		</Unit>
-		<Unit filename="D:/Projects/gumo_engine/gumo.h">
-			<Option target="gumo_engine"/>
-		</Unit>
 		<Unit filename="D:/Projects/gumo_engine/include/gumo/application.h">
 			<Option target="gumo_engine"/>
 		</Unit>
@@ -149,19 +146,22 @@
 		<Unit filename="D:/Projects/gumo_engine/include/gumo/entry_point.h">
 			<Option target="gumo_engine"/>
 		</Unit>
+		<Unit filename="D:/Projects/gumo_engine/include/gumo/input.h">
+			<Option target="gumo_engine"/>
+		</Unit>
 		<Unit filename="D:/Projects/gumo_engine/include/gumo/logger.h">
+			<Option target="gumo_engine"/>
+		</Unit>
+		<Unit filename="D:/Projects/gumo_engine/include/gumo/math.h">
 			<Option target="gumo_engine"/>
 		</Unit>
 		<Unit filename="D:/Projects/gumo_engine/include/gumo/renderer/buffer.h">
 			<Option target="gumo_engine"/>
 		</Unit>
-		<Unit filename="D:/Projects/gumo_engine/include/gumo/renderer/graphics_context.h">
+		<Unit filename="D:/Projects/gumo_engine/include/gumo/renderer/camera.h">
 			<Option target="gumo_engine"/>
 		</Unit>
-		<Unit filename="D:/Projects/gumo_engine/include/gumo/renderer/ortographics.h">
-			<Option target="gumo_engine"/>
-		</Unit>
-		<Unit filename="D:/Projects/gumo_engine/include/gumo/renderer/renderer_2d.h">
+		<Unit filename="D:/Projects/gumo_engine/include/gumo/renderer/renderer.h">
 			<Option target="gumo_engine"/>
 		</Unit>
 		<Unit filename="D:/Projects/gumo_engine/include/gumo/renderer/shader.h">
@@ -173,25 +173,31 @@
 		<Unit filename="D:/Projects/gumo_engine/include/gumo/renderer/vertex_array.h">
 			<Option target="gumo_engine"/>
 		</Unit>
+		<Unit filename="D:/Projects/gumo_engine/include/gumo/resource_manager.h">
+			<Option target="gumo_engine"/>
+		</Unit>
 		<Unit filename="D:/Projects/gumo_engine/include/gumo/window.h">
 			<Option target="gumo_engine"/>
 		</Unit>
 		<Unit filename="D:/Projects/gumo_engine/source/application.c">
 			<Option target="gumo_engine"/>
 		</Unit>
+		<Unit filename="D:/Projects/gumo_engine/source/input.c">
+			<Option target="gumo_engine"/>
+		</Unit>
 		<Unit filename="D:/Projects/gumo_engine/source/logger.c">
+			<Option target="gumo_engine"/>
+		</Unit>
+		<Unit filename="D:/Projects/gumo_engine/source/math.c">
 			<Option target="gumo_engine"/>
 		</Unit>
 		<Unit filename="D:/Projects/gumo_engine/source/renderer/buffer.c">
 			<Option target="gumo_engine"/>
 		</Unit>
-		<Unit filename="D:/Projects/gumo_engine/source/renderer/graphics_context.c">
+		<Unit filename="D:/Projects/gumo_engine/source/renderer/camera.c">
 			<Option target="gumo_engine"/>
 		</Unit>
-		<Unit filename="D:/Projects/gumo_engine/source/renderer/orthographic_camera.c">
-			<Option target="gumo_engine"/>
-		</Unit>
-		<Unit filename="D:/Projects/gumo_engine/source/renderer/renderer_2d.c">
+		<Unit filename="D:/Projects/gumo_engine/source/renderer/renderer.c">
 			<Option target="gumo_engine"/>
 		</Unit>
 		<Unit filename="D:/Projects/gumo_engine/source/renderer/shader.c">
@@ -201,6 +207,9 @@
 			<Option target="gumo_engine"/>
 		</Unit>
 		<Unit filename="D:/Projects/gumo_engine/source/renderer/vertex_array.c">
+			<Option target="gumo_engine"/>
+		</Unit>
+		<Unit filename="D:/Projects/gumo_engine/source/resource_manager.c">
 			<Option target="gumo_engine"/>
 		</Unit>
 		<Unit filename="D:/Projects/gumo_engine/source/window.c">

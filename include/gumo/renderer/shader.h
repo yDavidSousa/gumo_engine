@@ -1,18 +1,27 @@
-#pragma once
+#ifndef GUMO_ENGINE_SHADER_H
+#define GUMO_ENGINE_SHADER_H
 
 #include <gumo/core.h>
 #include <mathc.h>
+#include <gumo/math.h>
 
-typedef struct color{
+typedef struct color
+{
     float r, g, b, a;
 } color_t;
 
-typedef struct shader{
+GUMO_API const color_t COLOR_BLUE;
+GUMO_API const color_t COLOR_RED;
+GUMO_API const color_t COLOR_GREEN;
+GUMO_API const color_t COLOR_WHITE;
+GUMO_API const color_t COLOR_BLACK;
+
+typedef struct shader
+{
     unsigned int id;
 } shader_t;
 
-GUMO_API void create_shader_from_file(shader_t* shader, const char* path);
-GUMO_API void create_shader(const char* vertex_source, const char* fragment_source, shader_t* shader);
+GUMO_API void compile_shader(const char* vertex_source, const char* fragment_source, shader_t* shader);
 GUMO_API void delete_shader(shader_t* shader);
 GUMO_API void bind_shader(shader_t* shader);
 
@@ -23,3 +32,7 @@ GUMO_API void shader_set_float2(shader_t* shader, const char* name, struct vec2 
 GUMO_API void shader_set_float3(shader_t* shader, const char* name, struct vec3 value);
 GUMO_API void shader_set_float4(shader_t* shader, const char* name, struct vec4 value);
 GUMO_API void shader_set_color(shader_t* shader, const char* name, color_t value);
+
+GUMO_API void shader_set_matrix4(shader_t* shader, const char* name, const matrix4_t* matrix4);
+
+#endif //GUMO_ENGINE_SHADER_H
