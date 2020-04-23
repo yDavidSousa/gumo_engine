@@ -1,8 +1,5 @@
-# User-specific stuff:
-.idea/codeStyles
-.idea/dictionaries
-.idea/workspace.xml
-.idea/vcs.xml
+# Rider
+/.idea/
 
 # CMake
-cmake-build-debug/
+/cmake-build-debug/
