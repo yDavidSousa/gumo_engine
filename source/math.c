@@ -134,23 +134,23 @@ matrix4_t matrix4_ortho(float left, float right, float bottom, float top, float 
     matrix4_t result;
 
     result.m11 = 2.0f / (right - left);
-    result.m12 = 0.0f;
-    result.m13 = 0.0f;
-    result.m14 = -((right + left) / (right - left));
-
     result.m21 = 0.0f;
-    result.m22 = 2.0f / (top - bottom);
-    result.m23 = 0.0f;
-    result.m24 = -((top + bottom) / (top - bottom));
-
     result.m31 = 0.0f;
-    result.m32 = 0.0f;
-    result.m33 = -2.0f / (far - near);
-    result.m34 = -((far + near) / (far - near));
-
     result.m41 = 0.0f;
+
+    result.m12 = 0.0f;
+    result.m22 = 2.0f / (top - bottom);
+    result.m32 = 0.0f;
     result.m42 = 0.0f;
+
+    result.m13 = 0.0f;
+    result.m23 = 0.0f;
+    result.m33 = -2.0f / (far - near);
     result.m43 = 0.0f;
+
+    result.m14 = -((right + left) / (right - left));
+    result.m24 = -((top + bottom) / (top - bottom));
+    result.m34 = -((far + near) / (far - near));
     result.m44 = 1.0f;
 
     return result;
@@ -168,26 +168,22 @@ matrix4_t matrix4_scale(matrix4_t m0, vector3_t v0)
 matrix4_t matrix4_translate(matrix4_t m0, vector3_t v0)
 {
     matrix4_t result = m0;
-
-    result.m14 = m0.m14 + v0.x;
-    result.m24 = m0.m24 + v0.y;
-    result.m34 = m0.m34 + v0.z;
-
+    result.m41 = m0.m41 + v0.x;
+    result.m42 = m0.m42 + v0.y;
+    result.m43 = m0.m43 + v0.z;
     return result;
 }
 
 matrix4_t matrix4_translation(matrix4_t m0, vector3_t v0)
 {
     matrix4_t result = m0;
-
-    result.m14 = v0.x;
-    result.m24 = v0.y;
-    result.m34 = v0.z;
-
+    result.m41 = v0.x;
+    result.m42 = v0.y;
+    result.m43 = v0.z;
     return result;
 }
 
-matrix4_t matrix4_rotate(matrix4_t m, float angle, vector3_t axis)
+matrix4_t matrix4_rotate(float angle, vector3_t axis)
 {
     matrix4_t result;
 
@@ -205,23 +201,23 @@ matrix4_t matrix4_rotate(matrix4_t m, float angle, vector3_t axis)
     float sqrt_l = sqrtf(l);
 
     result.m11 = (xx + (yy + zz) * cos) / l;
-    result.m12 = (xy * one_cos - axis.z * sqrt_l * sin) / l;
-    result.m13 = (xz * one_cos + axis.y * sqrt_l * sin) / l;
-    result.m14 = 0.0f;
-
-    result.m21 = (xy * one_cos + axis.z * sqrt_l * sin) / l;
-    result.m22 = (yy + (xx + zz) * cos) / l;
-    result.m23 = (yz * one_cos - axis.x * sqrt_l * sin) / l;
-    result.m24 = 0.0f;
-
-    result.m31 = (xz * one_cos - axis.y * sqrt_l * sin) / l;
-    result.m32 = (yz * one_cos + axis.x * sqrt_l * sin) / l;
-    result.m33 = (zz + (xx + yy) * cos) / l;
-    result.m34 = 0.0f;
-
+    result.m21 = (xy * one_cos - axis.z * sqrt_l * sin) / l;
+    result.m31 = (xz * one_cos + axis.y * sqrt_l * sin) / l;
     result.m41 = 0.0f;
+
+    result.m12 = (xy * one_cos + axis.z * sqrt_l * sin) / l;
+    result.m22 = (yy + (xx + zz) * cos) / l;
+    result.m32 = (yz * one_cos - axis.x * sqrt_l * sin) / l;
     result.m42 = 0.0f;
+
+    result.m13 = (xz * one_cos - axis.y * sqrt_l * sin) / l;
+    result.m23 = (yz * one_cos + axis.x * sqrt_l * sin) / l;
+    result.m33 = (zz + (xx + yy) * cos) / l;
     result.m43 = 0.0f;
+
+    result.m14 = 0.0f;
+    result.m24 = 0.0f;
+    result.m34 = 0.0f;
     result.m44 = 1.0f;
 
     return result;
@@ -231,25 +227,25 @@ matrix4_t matrix4_multiply(matrix4_t m0, matrix4_t m1)
 {
     matrix4_t result;
 
-    result.m11 = (m0.m11 * m1.m11) + (m0.m12 * m1.m21) + (m0.m13 * m1.m31) + (m0.m14 * m1.m41);
-    result.m12 = (m0.m11 * m1.m12) + (m0.m12 * m1.m22) + (m0.m13 * m1.m32) + (m0.m14 * m1.m42);
-    result.m13 = (m0.m11 * m1.m13) + (m0.m12 * m1.m23) + (m0.m13 * m1.m33) + (m0.m14 * m1.m43);
-    result.m14 = (m0.m11 * m1.m14) + (m0.m12 * m1.m24) + (m0.m13 * m1.m34) + (m0.m14 * m1.m44);
+    result.m11 = m0.m11 * m1.m11 + m0.m12 * m1.m21 + m0.m13 * m1.m31 + m0.m14 * m1.m41;
+    result.m21 = m0.m21 * m1.m11 + m0.m22 * m1.m21 + m0.m23 * m1.m31 + m0.m24 * m1.m41;
+    result.m31 = m0.m31 * m1.m11 + m0.m32 * m1.m21 + m0.m33 * m1.m31 + m0.m34 * m1.m41;
+    result.m41 = m0.m41 * m1.m11 + m0.m42 * m1.m21 + m0.m43 * m1.m31 + m0.m44 * m1.m41;
 
-    result.m21 = (m0.m21 * m1.m11) + (m0.m22 * m1.m21) + (m0.m23 * m1.m31) + (m0.m24 * m1.m41);
-    result.m22 = (m0.m21 * m1.m12) + (m0.m22 * m1.m22) + (m0.m23 * m1.m32) + (m0.m24 * m1.m42);
-    result.m23 = (m0.m21 * m1.m13) + (m0.m22 * m1.m23) + (m0.m23 * m1.m33) + (m0.m24 * m1.m43);
-    result.m24 = (m0.m21 * m1.m14) + (m0.m22 * m1.m24) + (m0.m23 * m1.m34) + (m0.m24 * m1.m44);
+    result.m12 = m0.m11 * m1.m12 + m0.m12 * m1.m22 + m0.m13 * m1.m32 + m0.m14 * m1.m42;
+    result.m22 = m0.m21 * m1.m12 + m0.m22 * m1.m22 + m0.m23 * m1.m32 + m0.m24 * m1.m42;
+    result.m32 = m0.m31 * m1.m12 + m0.m32 * m1.m22 + m0.m33 * m1.m32 + m0.m34 * m1.m42;
+    result.m42 = m0.m41 * m1.m12 + m0.m42 * m1.m22 + m0.m43 * m1.m32 + m0.m44 * m1.m42;
 
-    result.m31 = (m0.m31 * m1.m11) + (m0.m32 * m1.m21) + (m0.m33 * m1.m31) + (m0.m34 * m1.m41);
-    result.m32 = (m0.m31 * m1.m12) + (m0.m32 * m1.m22) + (m0.m33 * m1.m32) + (m0.m34 * m1.m42);
-    result.m33 = (m0.m31 * m1.m13) + (m0.m32 * m1.m23) + (m0.m33 * m1.m33) + (m0.m34 * m1.m43);
-    result.m34 = (m0.m31 * m1.m14) + (m0.m32 * m1.m24) + (m0.m33 * m1.m34) + (m0.m34 * m1.m44);
+    result.m13 = m0.m11 * m1.m13 + m0.m12 * m1.m23 + m0.m13 * m1.m33 + m0.m14 * m1.m43;
+    result.m23 = m0.m21 * m1.m13 + m0.m22 * m1.m23 + m0.m23 * m1.m33 + m0.m24 * m1.m43;
+    result.m33 = m0.m31 * m1.m13 + m0.m32 * m1.m23 + m0.m33 * m1.m33 + m0.m34 * m1.m43;
+    result.m43 = m0.m41 * m1.m13 + m0.m42 * m1.m23 + m0.m43 * m1.m33 + m0.m44 * m1.m43;
 
-    result.m41 = (m0.m41 * m1.m11) + (m0.m42 * m1.m21) + (m0.m43 * m1.m31) + (m0.m44 * m1.m41);
-    result.m42 = (m0.m41 * m1.m12) + (m0.m42 * m1.m22) + (m0.m43 * m1.m32) + (m0.m44 * m1.m42);
-    result.m43 = (m0.m41 * m1.m13) + (m0.m42 * m1.m23) + (m0.m43 * m1.m33) + (m0.m44 * m1.m43);
-    result.m44 = (m0.m41 * m1.m14) + (m0.m42 * m1.m24) + (m0.m43 * m1.m34) + (m0.m44 * m1.m44);
+    result.m14 = m0.m11 * m1.m14 + m0.m12 * m1.m24 + m0.m13 * m1.m34 + m0.m14 * m1.m44;
+    result.m24 = m0.m21 * m1.m14 + m0.m22 * m1.m24 + m0.m23 * m1.m34 + m0.m24 * m1.m44;
+    result.m34 = m0.m31 * m1.m14 + m0.m32 * m1.m24 + m0.m33 * m1.m34 + m0.m34 * m1.m44;
+    result.m44 = m0.m41 * m1.m14 + m0.m42 * m1.m24 + m0.m43 * m1.m34 + m0.m44 * m1.m44;
 
     return result;
 }
@@ -258,102 +254,105 @@ matrix4_t matrix4_inverse(matrix4_t m0)
 {
     matrix4_t result;
 
-    result.m11 =   m0.m22 * m0.m33 * m0.m44
-                 - m0.m22 * m0.m34 * m0.m43
-                 - m0.m32 * m0.m23 * m0.m44
-                 + m0.m32 * m0.m24 * m0.m43
-                 + m0.m42 * m0.m23 * m0.m34
-                 - m0.m42 * m0.m24 * m0.m33;
-    result.m12 = - m0.m21 * m0.m33 * m0.m44
-                 + m0.m21 * m0.m34 * m0.m43
-                 + m0.m31 * m0.m23 * m0.m44
-                 - m0.m31 * m0.m24 * m0.m43
-                 - m0.m41 * m0.m23 * m0.m34
-                 + m0.m41 * m0.m24 * m0.m33;
-    result.m13 =   m0.m21 * m0.m32 * m0.m44
-                 - m0.m21 * m0.m34 * m0.m42
-                 - m0.m31 * m0.m22 * m0.m44
-                 + m0.m31 * m0.m24 * m0.m42
-                 + m0.m41 * m0.m22 * m0.m34
-                 - m0.m41 * m0.m24 * m0.m32;
-    result.m14 = - m0.m21 * m0.m32 * m0.m43
-                 + m0.m21 * m0.m33 * m0.m42
-                 + m0.m31 * m0.m22 * m0.m43
-                 - m0.m31 * m0.m23 * m0.m42
-                 - m0.m41 * m0.m22 * m0.m33
-                 + m0.m41 * m0.m23 * m0.m32;
-    result.m21 = - m0.m12 * m0.m33 * m0.m44
-                 + m0.m12 * m0.m34 * m0.m43
-                 + m0.m32 * m0.m13 * m0.m44
-                 - m0.m32 * m0.m14 * m0.m43
-                 - m0.m42 * m0.m13 * m0.m34
-                 + m0.m42 * m0.m14 * m0.m33;
-    result.m22 =   m0.m11 * m0.m33 * m0.m44
-                 - m0.m11 * m0.m34 * m0.m43
-                 - m0.m31 * m0.m13 * m0.m44
-                 + m0.m31 * m0.m14 * m0.m43
-                 + m0.m41 * m0.m13 * m0.m34
-                 - m0.m41 * m0.m14 * m0.m33;
-    result.m23 = - m0.m11 * m0.m32 * m0.m44
-                 + m0.m11 * m0.m34 * m0.m42
-                 + m0.m31 * m0.m12 * m0.m44
-                 - m0.m31 * m0.m14 * m0.m42
-                 - m0.m41 * m0.m12 * m0.m34
-                 + m0.m41 * m0.m14 * m0.m32;
-    result.m24 =   m0.m11 * m0.m32 * m0.m43
-                 - m0.m11 * m0.m33 * m0.m42
-                 - m0.m31 * m0.m12 * m0.m43
-                 + m0.m31 * m0.m13 * m0.m42
-                 + m0.m41 * m0.m12 * m0.m33
-                 - m0.m41 * m0.m13 * m0.m32;
-    result.m31 =   m0.m12 * m0.m23 * m0.m44
-                 - m0.m12 * m0.m24 * m0.m43
-                 - m0.m22 * m0.m13 * m0.m44
-                 + m0.m22 * m0.m14 * m0.m43
-                 + m0.m42 * m0.m13 * m0.m24
-                 - m0.m42 * m0.m14 * m0.m23;
-    result.m32 = - m0.m11 * m0.m23 * m0.m44
-                 + m0.m11 * m0.m24 * m0.m43
-                 + m0.m21 * m0.m13 * m0.m44
-                 - m0.m21 * m0.m14 * m0.m43
-                 - m0.m41 * m0.m13 * m0.m24
-                 + m0.m41 * m0.m14 * m0.m23;
+    result.m11 =  m0.m22 * m0.m33 * m0.m44
+                 -m0.m22 * m0.m43 * m0.m34
+                 -m0.m23 * m0.m32 * m0.m44
+                 +m0.m23 * m0.m42 * m0.m34
+                 +m0.m24 * m0.m32 * m0.m43
+                 -m0.m24 * m0.m42 * m0.m33;
+    result.m12 = -m0.m12 * m0.m33 * m0.m44
+                 +m0.m12 * m0.m43 * m0.m34
+                 +m0.m13 * m0.m32 * m0.m44
+                 -m0.m13 * m0.m42 * m0.m34
+                 -m0.m14 * m0.m32 * m0.m43
+                 +m0.m14 * m0.m42 * m0.m33;
+    result.m13 =  m0.m12 * m0.m23 * m0.m44
+                 -m0.m12 * m0.m43 * m0.m24
+                 -m0.m13 * m0.m22 * m0.m44
+                 +m0.m13 * m0.m42 * m0.m24
+                 +m0.m14 * m0.m22 * m0.m43
+                 -m0.m14 * m0.m42 * m0.m23;
+    result.m14 = -m0.m12 * m0.m23 * m0.m34
+                 +m0.m12 * m0.m33 * m0.m24
+                 +m0.m13 * m0.m22 * m0.m34
+                 -m0.m13 * m0.m32 * m0.m24
+                 -m0.m14 * m0.m22 * m0.m33
+                 +m0.m14 * m0.m32 * m0.m23;
+
+    result.m21 = -m0.m21 * m0.m33 * m0.m44
+                 +m0.m21 * m0.m43 * m0.m34
+                 +m0.m23 * m0.m31 * m0.m44
+                 -m0.m23 * m0.m41 * m0.m34
+                 -m0.m24 * m0.m31 * m0.m43
+                 +m0.m24 * m0.m41 * m0.m33;
+    result.m22 =  m0.m11 * m0.m33 * m0.m44
+                 -m0.m11 * m0.m43 * m0.m34
+                 -m0.m13 * m0.m31 * m0.m44
+                 +m0.m13 * m0.m41 * m0.m34
+                 +m0.m14 * m0.m31 * m0.m43
+                 -m0.m14 * m0.m41 * m0.m33;
+    result.m23 = -m0.m11 * m0.m23 * m0.m44
+                 +m0.m11 * m0.m43 * m0.m24
+                 +m0.m13 * m0.m21 * m0.m44
+                 -m0.m13 * m0.m41 * m0.m24
+                 -m0.m14 * m0.m21 * m0.m43
+                 +m0.m14 * m0.m41 * m0.m23;
+    result.m24 =  m0.m11 * m0.m23 * m0.m34
+                 -m0.m11 * m0.m33 * m0.m24
+                 -m0.m13 * m0.m21 * m0.m34
+                 +m0.m13 * m0.m31 * m0.m24
+                 +m0.m14 * m0.m21 * m0.m33
+                 -m0.m14 * m0.m31 * m0.m23;
+
+    result.m31 =  m0.m21 * m0.m32 * m0.m44
+                 -m0.m21 * m0.m42 * m0.m34
+                 -m0.m22 * m0.m31 * m0.m44
+                 +m0.m22 * m0.m41 * m0.m34
+                 +m0.m24 * m0.m31 * m0.m42
+                 -m0.m24 * m0.m41 * m0.m32;
+    result.m32 = -m0.m11 * m0.m32 * m0.m44
+                 +m0.m11 * m0.m42 * m0.m34
+                 +m0.m12 * m0.m31 * m0.m44
+                 -m0.m12 * m0.m41 * m0.m34
+                 -m0.m14 * m0.m31 * m0.m42
+                 +m0.m14 * m0.m41 * m0.m32;
     result.m33 =  m0.m11 * m0.m22 * m0.m44
-                 - m0.m11 * m0.m24 * m0.m42
-                 - m0.m21 * m0.m12 * m0.m44
-                 + m0.m21 * m0.m14 * m0.m42
-                 + m0.m41 * m0.m12 * m0.m24
-                 - m0.m41 * m0.m14 * m0.m22;
-    result.m34 = -m0.m11 * m0.m22 * m0.m43
-                 + m0.m11 * m0.m23 * m0.m42
-                 + m0.m21 * m0.m12 * m0.m43
-                 - m0.m21 * m0.m13 * m0.m42
-                 - m0.m41 * m0.m12 * m0.m23
-                 + m0.m41 * m0.m13 * m0.m22;
-    result.m41 = -m0.m12 * m0.m23 * m0.m34
-                 + m0.m12 * m0.m24 * m0.m33
-                 + m0.m22 * m0.m13 * m0.m34
-                 - m0.m22 * m0.m14 * m0.m33
-                 - m0.m32 * m0.m13 * m0.m24
-                 + m0.m32 * m0.m14 * m0.m23;
-    result.m42 =  m0.m11 * m0.m23 * m0.m34
-                 - m0.m11 * m0.m24 * m0.m33
-                 - m0.m21 * m0.m13 * m0.m34
-                 + m0.m21 * m0.m14 * m0.m33
-                 + m0.m31 * m0.m13 * m0.m24
-                 - m0.m31 * m0.m14 * m0.m23;
-    result.m43 = -m0.m11 * m0.m22 * m0.m34
-                 + m0.m11 * m0.m24 * m0.m32
-                 + m0.m21 * m0.m12 * m0.m34
-                 - m0.m21 * m0.m14 * m0.m32
-                 - m0.m31 * m0.m12 * m0.m24
-                 + m0.m31 * m0.m14 * m0.m22;
-    result.m44 =   m0.m11 * m0.m22 * m0.m33
-                 - m0.m11 * m0.m23 * m0.m32
-                 - m0.m21 * m0.m12 * m0.m33
-                 + m0.m21 * m0.m13 * m0.m32
-                 + m0.m31 * m0.m12 * m0.m23
-                 - m0.m31 * m0.m13 * m0.m22;
+                 -m0.m11 * m0.m42 * m0.m24
+                 -m0.m12 * m0.m21 * m0.m44
+                 +m0.m12 * m0.m41 * m0.m24
+                 +m0.m14 * m0.m21 * m0.m42
+                 -m0.m14 * m0.m41 * m0.m22;
+    result.m34 = -m0.m11 * m0.m22 * m0.m34
+                 +m0.m11 * m0.m32 * m0.m24
+                 +m0.m12 * m0.m21 * m0.m34
+                 -m0.m12 * m0.m31 * m0.m24
+                 -m0.m14 * m0.m21 * m0.m32
+                 +m0.m14 * m0.m31 * m0.m22;
+
+    result.m41 = -m0.m21 * m0.m32 * m0.m43
+                 +m0.m21 * m0.m42 * m0.m33
+                 +m0.m22 * m0.m31 * m0.m43
+                 -m0.m22 * m0.m41 * m0.m33
+                 -m0.m23 * m0.m31 * m0.m42
+                 +m0.m23 * m0.m41 * m0.m32;
+    result.m42 =  m0.m11 * m0.m32 * m0.m43
+                 -m0.m11 * m0.m42 * m0.m33
+                 -m0.m12 * m0.m31 * m0.m43
+                 +m0.m12 * m0.m41 * m0.m33
+                 +m0.m13 * m0.m31 * m0.m42
+                 -m0.m13 * m0.m41 * m0.m32;
+    result.m43 = -m0.m11 * m0.m22 * m0.m43
+                 +m0.m11 * m0.m42 * m0.m23
+                 +m0.m12 * m0.m21 * m0.m43
+                 -m0.m12 * m0.m41 * m0.m23
+                 -m0.m13 * m0.m21 * m0.m42
+                 +m0.m13 * m0.m41 * m0.m22;
+    result.m44 =  m0.m11 * m0.m22 * m0.m33
+                 -m0.m11 * m0.m32 * m0.m23
+                 -m0.m12 * m0.m21 * m0.m33
+                 +m0.m12 * m0.m31 * m0.m23
+                 +m0.m13 * m0.m21 * m0.m32
+                 -m0.m13 * m0.m31 * m0.m22;
 
     float inverted_determinant = 1.0f / (m0.m11 * result.m11 + m0.m21 * result.m12 + m0.m31 * result.m13 + m0.m41 * result.m14);
 

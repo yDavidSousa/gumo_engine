@@ -87,9 +87,6 @@ void run_application(application_t* application)
         //INPUT HANDLE
         update_keyboard();
 
-        //on_update(delta_time);
-        //on_late_update();
-
         camera_update(&application->camera, delta_time);
 
         // RENDER
@@ -99,6 +96,7 @@ void run_application(application_t* application)
         begin_scene(&application->camera, BLEND_ALPHA, DRAW_SHADED);
         {
             draw_mesh_color((vector2_t){-1.0f, 0.0f}, VECTOR2_ONE, COLOR_RED);
+            draw_mesh_color((vector2_t){1.0f, 0.0f}, VECTOR2_ONE, COLOR_BLUE);
 
             bind_texture(texture, 0);
             submit(shader, vertex_array, matrix4_translate(MATRIX4_IDENTITY, (vector3_t){-1.0f, 0.0f}));

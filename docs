@@ -1,4 +1,22 @@
-Immediate-Mode GUI References
--> https://github.com/rxi/microui
-
 renderer/command_buffer
+
+REFERENCES:
+    - Immediate-Mode GUI References (https://github.com/rxi/microui)
+
+TODO:
+    - Add string utility;
+    - Add directory_path and resource_path in application;
+    - Add search to resource;
+    - Store resources(assets) into a variable and make a file with hash;
+    - Shader Variant Collections
+    - Added profiling;
+    - Added Batch Renderer, Vertex Batch
+    - Added Immediate-Mode GUI
+    - Added text renderer
+
+
+
+//Matrix, Projection and Major Order
+https://en.wikipedia.org/wiki/Row-_and_column-major_order
+https://www.scratchapixel.com/lessons/3d-basic-rendering/perspective-and-orthographic-projection-matrix/orthographic-projection-matrix
+http://www.songho.ca/opengl/gl_projectionmatrix.html#ortho

@@ -105,8 +105,8 @@ void draw_mesh_color(vector2_t position, vector2_t size, color_t color)
 
     matrix4_t mat_position = matrix4_translate(MATRIX4_IDENTITY, (vector3_t){position.x, position.y, 0.0f});
     matrix4_t mat_scale = matrix4_scale(MATRIX4_IDENTITY, (vector3_t){size.x, size.y, 1.0f});
-    matrix4_t mat_rotation = matrix4_rotate(MATRIX4_IDENTITY, to_radians(0.0f), VECTOR3_FORWARD);
-    matrix4_t transform = matrix4_multiply(matrix4_multiply(mat_position, mat_rotation), mat_scale);
+    matrix4_t mat_rotation = matrix4_rotate(to_radians(0.0f), VECTOR3_FORWARD);
+    matrix4_t transform = matrix4_multiply(mat_scale, matrix4_multiply(mat_rotation, mat_position));
     shader_set_matrix4(&renderer_storage.flat_color_shader, "u_Transform", &transform);
 
     bind_vertex_array(&renderer_storage.vertex_array);

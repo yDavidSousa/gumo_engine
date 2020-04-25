@@ -42,8 +42,8 @@ typedef struct vector4
 
 typedef struct matrix2
 {
-    float m11, m12;
-    float m21, m22;
+    float m11, m21;
+    float m12, m22;
 } matrix2_t;
 
 GUMO_API const matrix2_t MATRIX2_ZERO;
@@ -51,9 +51,9 @@ GUMO_API const matrix2_t MATRIX2_IDENTITY;
 
 typedef struct matrix3
 {
-    float m11, m12, m13;
-    float m21, m22, m23;
-    float m31, m32, m33;
+    float m11, m21, m31;
+    float m12, m22, m32;
+    float m13, m23, m33;
 } matrix3_t;
 
 GUMO_API const matrix3_t MATRIX3_ZERO;
@@ -83,7 +83,7 @@ GUMO_API vector3_t vector3_multiply_f(vector3_t v0, float f);
 GUMO_API matrix4_t matrix4_ortho(float left, float right, float bottom, float top, float near, float far);
 GUMO_API matrix4_t matrix4_translate(matrix4_t m0, vector3_t v0);
 GUMO_API matrix4_t matrix4_translation(matrix4_t m0, vector3_t v0);
-GUMO_API matrix4_t matrix4_rotate(matrix4_t m, float angle, vector3_t axis);
+GUMO_API matrix4_t matrix4_rotate(float angle, vector3_t axis);
 GUMO_API matrix4_t matrix4_scale(matrix4_t m0, vector3_t v0);
 GUMO_API matrix4_t matrix4_multiply(matrix4_t m0, matrix4_t m1);
 GUMO_API matrix4_t matrix4_inverse(matrix4_t m0);
