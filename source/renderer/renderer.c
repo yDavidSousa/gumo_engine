@@ -4,7 +4,7 @@
 
 matrix4_t view_projection_matrix;
 
-GUMO_API void initialize_renderer()
+void initialize_renderer(const char* data_path)
 {
     glewInit();
     glEnable(GL_BLEND);
@@ -36,8 +36,14 @@ GUMO_API void initialize_renderer()
     set_index_buffer(&renderer_storage.vertex_array, index_buffer);
 
     // Shader
-    char* vertex_src = "D:\\Projects\\gumo_engine\\resources\\shaders\\flat_color.vert";
-    char* fragment_src = "D:\\Projects\\gumo_engine\\resources\\shaders\\flat_color.frag";
+    char vertex_src[512] = {};
+    strcat(vertex_src, data_path);
+    strcat(vertex_src, "\\resources\\shaders\\flat_color.vert");
+
+    char fragment_src[512] = {};
+    strcat(fragment_src, data_path);
+    strcat(fragment_src, "\\resources\\shaders\\flat_color.frag");
+
     renderer_storage.flat_color_shader = *load_shader_from_file(vertex_src, fragment_src);
 }
 
@@ -90,7 +96,7 @@ void submit(shader_t* shader, vertex_array_t* vertex_array, matrix4_t transform)
 {
     bind_shader(shader);
     shader_set_matrix4(shader, "u_ViewProjection", &view_projection_matrix);
-    //shader_set_matrix4(shader, "u_Transform", &transform);
+    shader_set_matrix4(shader, "u_Transform", &transform);
 
     bind_vertex_array(vertex_array);
     draw_indexed(vertex_array, 0);
@@ -106,7 +112,7 @@ void draw_mesh_color(vector2_t position, vector2_t size, color_t color)
     matrix4_t mat_position = matrix4_translate(MATRIX4_IDENTITY, (vector3_t){position.x, position.y, 0.0f});
     matrix4_t mat_scale = matrix4_scale(MATRIX4_IDENTITY, (vector3_t){size.x, size.y, 1.0f});
     matrix4_t mat_rotation = matrix4_rotate(to_radians(0.0f), VECTOR3_FORWARD);
-    matrix4_t transform = matrix4_multiply(mat_scale, matrix4_multiply(mat_rotation, mat_position));
+    matrix4_t transform = matrix4_multiply(matrix4_multiply(mat_position, mat_rotation), mat_scale);
     shader_set_matrix4(&renderer_storage.flat_color_shader, "u_Transform", &transform);
 
     bind_vertex_array(&renderer_storage.vertex_array);

@@ -18,7 +18,7 @@ void initialize_camera(camera_t* camera, float aspect_ratio, int type)
     }
 
     camera->view_matrix = MATRIX4_IDENTITY;
-    camera->view_projection_matrix = matrix4_multiply(camera->view_matrix, camera->projection_matrix);
+    camera->view_projection_matrix = matrix4_multiply(camera->projection_matrix, camera->view_matrix);
 }
 
 void camera_set_position(camera_t* camera, vector3_t position)
@@ -37,10 +37,10 @@ void camera_recalculate_matrix(camera_t* camera)
 {
     matrix4_t position = matrix4_translate(MATRIX4_IDENTITY, camera->position);
     matrix4_t rotation = matrix4_rotate(to_radians(camera->rotation), VECTOR3_FORWARD);
-    matrix4_t transform = matrix4_multiply(rotation, position);
+    matrix4_t transform = matrix4_multiply(position, rotation);
 
     camera->view_matrix = matrix4_inverse(transform);
-    camera->view_projection_matrix = matrix4_multiply(camera->view_matrix, camera->projection_matrix);
+    camera->view_projection_matrix = matrix4_multiply(camera->projection_matrix, camera->view_matrix);
 }
 
 void camera_update(camera_t* camera, float delta_time)

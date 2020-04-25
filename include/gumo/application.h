@@ -29,7 +29,7 @@ GUMO_API extern void on_update(float delta_time);
 GUMO_API extern void on_late_update();
 //
 
-GUMO_API void initialize_application(application_t* application, char* title, int width, int height);
+GUMO_API void initialize_application(application_t* application, const char* data_path, const char* title, int width, int height);
 GUMO_API void run_application(application_t* application);
 GUMO_API void end_application();
 

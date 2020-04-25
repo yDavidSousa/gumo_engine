@@ -7,21 +7,29 @@ vertex_array_t* vertex_array;
 shader_t* shader;
 texture_t* texture;
 
-void initialize_application(application_t* application, char* title, int width, int height)
+void initialize_application(application_t* application, const char* data_path, const char* title, int width, int height)
 {
     application->window = MEM_ALLOC(window_t, 1);
     application->target_frame_rate = 60;
     application->is_running = true;
+    application->data_path = MEM_ALLOC(char, strlen(data_path));
+    strcpy(application->data_path, data_path);
 
     initialize_window(application->window, title, width, height);
     float aspect_ratio = (float)width / (float)height;
     initialize_camera(&application->camera, aspect_ratio, ORTHOGRAPHIC_CAMERA);
     initialize_input(application->window);
-    initialize_renderer();
+    initialize_renderer(data_path);
 
     // Shader
-    char* vertex_src = "D:\\Projects\\gumo_engine\\resources\\shaders\\default_texture.vert";
-    char* fragment_src = "D:\\Projects\\gumo_engine\\resources\\shaders\\default_texture.frag";
+    char vertex_src[512] = {};
+    strcat(vertex_src, application->data_path);
+    strcat(vertex_src, "\\resources\\shaders\\default_texture.vert");
+
+    char fragment_src[512] = {};
+    strcat(fragment_src, application->data_path);
+    strcat(fragment_src, "\\resources\\shaders\\default_texture.frag");
+
     shader = load_shader_from_file(vertex_src, fragment_src);
 
     // Vertex Array
@@ -57,7 +65,10 @@ void initialize_application(application_t* application, char* title, int width, 
     set_index_buffer(vertex_array, index_buffer);
 
     //Texture
-    texture = load_texture_from_file("D:\\Projects\\gumo_engine\\resources\\textures\\luppi.png");
+    char texture_src[512] = {};
+    strcat(texture_src, application->data_path);
+    strcat(texture_src, "\\resources\\textures\\luppi.png");
+    texture = load_texture_from_file(texture_src);
 
     bind_texture(texture, 0);
     shader_set_int(shader, "u_Texture", 0);
@@ -99,7 +110,7 @@ void run_application(application_t* application)
             draw_mesh_color((vector2_t){1.0f, 0.0f}, VECTOR2_ONE, COLOR_BLUE);
 
             bind_texture(texture, 0);
-            submit(shader, vertex_array, matrix4_translate(MATRIX4_IDENTITY, (vector3_t){-1.0f, 0.0f}));
+            submit(shader, vertex_array, matrix4_translate(MATRIX4_IDENTITY, VECTOR3_ZERO));
         }
         end_scene();
 

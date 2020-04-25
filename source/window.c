@@ -7,7 +7,7 @@ static void error_callback(int error, const char* description)
     GM_LOG_CRITICAL("%s", description);
 }
 
-void initialize_window(window_t* window, char* title, int width, int height)
+void initialize_window(window_t* window, const char* title, int width, int height)
 {
     if(GLFWInitialized == false)
     {
@@ -27,7 +27,8 @@ void initialize_window(window_t* window, char* title, int width, int height)
     window->window = glfwCreateWindow(width, height, title, NULL, NULL);
     GM_LOG_INFO("Creating window Gumo Engine (%d, %d)", width, height);
 
-    window->title = title;
+    window->title = MEM_ALLOC(char, strlen(title));
+    strcpy(window->title, title);
     window->width = width;
     window->height = height;
 

@@ -12,7 +12,7 @@ typedef struct window
     GLFWwindow* window;
 } window_t;
 
-GUMO_API void initialize_window(window_t* window, char* title, int width, int height);
+GUMO_API void initialize_window(window_t* window, const char* title, int width, int height);
 GUMO_API void update_window(window_t* window);
 
 GUMO_API void set_vsync_window(bool value);

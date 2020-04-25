@@ -29,7 +29,7 @@ typedef struct renderer_storage
 
 renderer_storage_t renderer_storage;
 
-GUMO_API void initialize_renderer();
+GUMO_API void initialize_renderer(const char* data_path);
 GUMO_API void renderer_viewport(unsigned int x, unsigned int y, unsigned int width, unsigned int height);
 GUMO_API void renderer_clear_color(color_t color);
 GUMO_API void renderer_clear();
